@@ -9,6 +9,8 @@ has changed, commits the change then pushes it to GitHub. As such, this
 repository should always have a fairly up-to-date syntax file as long as there
 has not been any significant refactoring by the tmux maintainers.
 
+![Screenshot of tmux configuration in Vim](screenshot.png)
+
 This project and all accompanying files (unless stated otherwise) are licensed
 under the [2-clause BSD license][bsd-2-clause].
 
