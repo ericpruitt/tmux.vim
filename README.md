@@ -48,5 +48,5 @@ option names. The Makefile and Awk script are POSIX-compliant.
 - **install:** Install the Vim files in `$HOME/.vim`.
 - **sync:** Pull the latest tmux commits, update the Vim syntax file then
   commit the changes. If "PUSH_AFTER_SYNC" is set to "true", the commit will
-  automatically be pushed upstream i.e. `PUSH_AFTER_SYNC=true make sync`. The
+  automatically be pushed upstream i.e. `make PUSH_AFTER_SYNC=true sync`. The
   default value of "PUSH_AFTER_SYNC" is "false".
