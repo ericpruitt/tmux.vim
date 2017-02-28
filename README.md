@@ -36,8 +36,8 @@ Development
 
 In addition to the Makefile, there are two other components to this repository
 used to generate the syntax file. The top portion of the syntax file that
-defines syntax-matching regular expressions is found in "./src/template.vim".
-It is combined with the output of "./src/c-to-syntax.awk", an Awk script that
+defines syntax-matching regular expressions is found in "./src/header.vim". It
+is combined with the output of "./src/dump-keywords.awk", an Awk script that
 accepts tmux C source files as arguments then dumps extracted command and
 option names. The Makefile and Awk script are POSIX-compliant.
 

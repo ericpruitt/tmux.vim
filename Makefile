@@ -27,9 +27,9 @@ install:
 $(TMUX_GIT_DIR):
 	git clone $(TMUX_URL) $(@D)
 
-$(TMUX_SYNTAX_FILE): $(TMUX_GIT_DIR) src/template.vim src/c-to-syntax.awk
-	sed "s/TMUX_VERSION/$(TMUX_VERSION)/" src/template.vim > $@.tmp
-	awk -f src/c-to-syntax.awk tmux/*.c >> $@.tmp
+$(TMUX_SYNTAX_FILE): $(TMUX_GIT_DIR) src/header.vim src/dump-keywords.awk
+	sed "s/TMUX_VERSION/$(TMUX_VERSION)/" src/header.vim > $@.tmp
+	awk -f src/dump-keywords.awk tmux/*.c >> $@.tmp
 	if test ! -e $@ || diff -u $@ $@.tmp | \
 	  sed -n '/^@@/,$${/Version:/!{/^+/p}}' | grep -q "^"; then \
 		mv $@.tmp $@; \
