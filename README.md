@@ -11,9 +11,22 @@ has not been any significant refactoring by the tmux maintainers.
 
 ![Screenshot of tmux configuration in Vim](screenshot.png)
 
+The syntax file was derived from [Keith Smiley's tmux.vim][keith-tmux.vim] with
+some changes:
+
+- When a color is used (e.g. "colour7"), the text's foreground is changed to
+  reflect the color that the number represents. For darker colors, the
+  background is changed to white since the text might otherwise be invisible.
+- Distinct highlighting has been added for interpolated blocks (`#[...]`,
+  `#(...)` and `#{...}`).
+- Multi-line strings are supported and correctly correctly highlighted.
+- The highlighting style has been modified; what is considered a boolean,
+  identifier, etc. in this version of the syntax file differs from Keith's.
+
 This project and all accompanying files (unless stated otherwise) are licensed
 under the [2-clause BSD license][bsd-2-clause].
 
+  [keith-tmux.vim]: https://github.com/keith/tmux.vim
   [bsd-2-clause]: http://opensource.org/licenses/BSD-2-Clause
 
 Installation
