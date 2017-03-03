@@ -51,14 +51,14 @@ hi def link tmuxTodo              Todo
 hi def link tmuxVariable          Identifier
 hi def link tmuxVariableExpansion Identifier
 
-for i in range(0, 255)
-    if i == 0 || i == 16 || i == 232 || i == 233 || i == 233 || i == 234
-        exec "highlight tmuxColour" . i . " ctermfg=" . i . " ctermbg=15"
-    else
-        exec "highlight tmuxColour" . i . " ctermfg=" . i
-    endif
-    exec "syn match tmuxColour" . i . " /\\<colour" . i . "\\>/ display"
+" Make the foreground of colourXXX keywords match the color they represent.
+" Darker colors have their background set to white.
+for s:i in range(0, 255)
+    let s:bg = (!s:i || s:i == 16 || (s:i > 231 && s:i < 235)) ? 15 : "none"
+    exec "syn match tmuxColour" . s:i . " /\\<colour" . s:i . "\\>/ display"
+\     " | highlight tmuxColour" . s:i . " ctermfg=" . s:i . " ctermbg=" . s:bg
 endfor
+unlet s:bg s:i
 
 syn keyword tmuxOptions
 \ buffer-limit command-alias default-terminal escape-time exit-unattached
