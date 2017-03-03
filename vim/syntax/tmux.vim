@@ -1,5 +1,6 @@
 " Language: tmux(1) configuration file
 " Version: 2.3 (git-14dc2ac)
+" URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
 
