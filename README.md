@@ -40,9 +40,17 @@ Assuming _make(1)_ is installed and there is an existing Vim directory at
 ### Plugin Manager ###
 
 This repository should work with most Vim plugin managers that support tracking
-Git repositories (e.g. [vim-plug][vim-plug]).
+Git repositories. Since the files needed by Vim at runtime are in the
+subdirectory "vim/", the plugin managers will typically need to be configured
+to load files from the correct folder:
 
+- [dein][dein]: `call dein#add('ericpruitt/tmux.vim', {'rtp': 'vim/'})`
+- [vim-plug][vim-plug]: `Plug 'ericpruitt/tmux.vim', {'rtp': 'vim/'}`
+- [Vundle][vundle]: `Plugin 'ericpruitt/tmux.vim', {'rtp': 'vim/'}`
+
+  [dein]: https://github.com/Shougo/dein.vim
   [vim-plug]: https://github.com/junegunn/vim-plug
+  [vundle]: https://github.com/VundleVim/Vundle.vim
 
 Development
 -----------
