@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 2.3 (git-14dc2ac)
+" Version: 2.5 (git-92d8658)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -97,28 +97,27 @@ syn keyword tmuxOptions
 
 syn keyword tmuxCommands
 \ attach-session attach bind-key bind break-pane breakp capture-pane
-\ capturep clear-history clearhist choose-buffer choose-client choose-tree
-\ choose-session choose-window command-prompt confirm-before confirm
-\ copy-mode clock-mode detach-client detach suspend-client suspendc
-\ display-message display display-panes displayp find-window findw if-shell
-\ if join-pane joinp move-pane movep kill-pane killp kill-server
-\ start-server start kill-session kill-window killw unlink-window unlinkw
-\ list-buffers lsb list-clients lsc list-keys lsk list-commands lscm
-\ list-panes lsp list-sessions ls list-windows lsw load-buffer loadb
-\ lock-server lock lock-session locks lock-client lockc move-window movew
-\ link-window linkw new-session new has-session has new-window neww
-\ paste-buffer pasteb pipe-pane pipep refresh-client refresh rename-session
-\ rename rename-window renamew resize-pane resizep respawn-pane respawnp
-\ respawn-window respawnw rotate-window rotatew run-shell run save-buffer
-\ saveb show-buffer showb select-layout selectl next-layout nextl
-\ previous-layout prevl select-pane selectp last-pane lastp select-window
-\ selectw next-window next previous-window prev last-window last send-keys
-\ send send-prefix set-buffer setb delete-buffer deleteb set-environment
-\ setenv set-hook show-hooks set-option set set-window-option setw
-\ show-environment showenv show-messages showmsgs show-options show
-\ show-window-options showw source-file source split-window splitw swap-pane
-\ swapp swap-window swapw switch-client switchc unbind-key unbind wait-for
-\ wait
+\ capturep clear-history clearhist choose-tree choose-client choose-buffer
+\ command-prompt confirm-before confirm copy-mode clock-mode detach-client
+\ detach suspend-client suspendc display-message display display-panes
+\ displayp find-window findw if-shell if join-pane joinp move-pane movep
+\ kill-pane killp kill-server start-server start kill-session kill-window
+\ killw unlink-window unlinkw list-buffers lsb list-clients lsc list-keys
+\ lsk list-commands lscm list-panes lsp list-sessions ls list-windows lsw
+\ load-buffer loadb lock-server lock lock-session locks lock-client lockc
+\ move-window movew link-window linkw new-session new has-session has
+\ new-window neww paste-buffer pasteb pipe-pane pipep refresh-client refresh
+\ rename-session rename rename-window renamew resize-pane resizep
+\ respawn-pane respawnp respawn-window respawnw rotate-window rotatew
+\ run-shell run save-buffer saveb show-buffer showb select-layout selectl
+\ next-layout nextl previous-layout prevl select-pane selectp last-pane
+\ lastp select-window selectw next-window next previous-window prev
+\ last-window last send-keys send send-prefix set-buffer setb delete-buffer
+\ deleteb set-environment setenv set-hook show-hooks set-option set
+\ set-window-option setw show-environment showenv show-messages showmsgs
+\ show-options show show-window-options showw source-file source
+\ split-window splitw swap-pane swapp swap-window swapw switch-client
+\ switchc unbind-key unbind wait-for wait
 
 let &cpo = s:original_cpo
 unlet! s:original_cpo s:bg s:i
