@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 2.5 (git-757eb06)
+" Version: 2.5 (git-6995497)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -62,12 +62,12 @@ for s:i in range(0, 255)
 endfor
 
 syn keyword tmuxOptions
-\ buffer-limit command-alias default-terminal escape-time assume-paste-time
-\ base-index bell-action bell-on-alert default-command default-shell
-\ destroy-unattached detach-on-destroy display-panes-active-colour
-\ display-panes-colour display-panes-time display-time exit-unattached
-\ focus-events history-file history-limit key-table lock-after-time
-\ lock-command message-attr message-bg message-command-attr
+\ buffer-limit command-alias default-terminal escape-time exit-unattached
+\ assume-paste-time base-index bell-action bell-on-alert default-command
+\ default-shell destroy-unattached detach-on-destroy
+\ display-panes-active-colour display-panes-colour display-panes-time
+\ display-time focus-events history-file history-limit key-table
+\ lock-after-time lock-command message-attr message-bg message-command-attr
 \ message-command-bg message-command-fg message-command-style message-fg
 \ message-limit message-style mouse aggressive-resize allow-rename
 \ alternate-screen automatic-rename automatic-rename-format
@@ -83,8 +83,8 @@ syn keyword tmuxOptions
 \ status-left-fg status-left-length status-left-style status-position
 \ status-right status-right-attr status-right-bg status-right-fg
 \ status-right-length status-right-style status-style synchronize-panes
-\ terminal-overrides update-environment visual-activity visual-bell
-\ visual-silence window-active-style window-status-activity-attr
+\ terminal-overrides update-environment user-keys visual-activity
+\ visual-bell visual-silence window-active-style window-status-activity-attr
 \ window-status-activity-bg window-status-activity-fg
 \ window-status-activity-style window-status-attr window-status-bell-attr
 \ window-status-bell-bg window-status-bell-fg window-status-bell-style
