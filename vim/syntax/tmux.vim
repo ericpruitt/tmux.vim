@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 2.5 (git-6995497)
+" Version: 2.5 (git-58744de3)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -63,37 +63,37 @@ endfor
 
 syn keyword tmuxOptions
 \ buffer-limit command-alias default-terminal escape-time exit-unattached
-\ assume-paste-time base-index bell-action bell-on-alert default-command
+\ activity-action assume-paste-time base-index bell-action default-command
 \ default-shell destroy-unattached detach-on-destroy
 \ display-panes-active-colour display-panes-colour display-panes-time
 \ display-time focus-events history-file history-limit key-table
 \ lock-after-time lock-command message-attr message-bg message-command-attr
 \ message-command-bg message-command-fg message-command-style message-fg
-\ message-limit message-style mouse aggressive-resize allow-rename
+\ message-limit message-style mouse prefix aggressive-resize allow-rename
 \ alternate-screen automatic-rename automatic-rename-format
 \ clock-mode-colour clock-mode-style force-height force-width
 \ main-pane-height main-pane-width mode-attr mode-bg mode-fg mode-keys
 \ mode-style monitor-activity monitor-silence other-pane-height
 \ other-pane-width pane-active-border-bg pane-active-border-fg
 \ pane-active-border-style pane-base-index pane-border-bg pane-border-fg
-\ pane-border-format pane-border-status pane-border-style prefix prefix2
+\ pane-border-format pane-border-status pane-border-style prefix2
 \ remain-on-exit renumber-windows repeat-time set-clipboard set-titles
-\ set-titles-string status status-attr status-bg status-fg status-interval
-\ status-justify status-keys status-left status-left-attr status-left-bg
-\ status-left-fg status-left-length status-left-style status-position
-\ status-right status-right-attr status-right-bg status-right-fg
-\ status-right-length status-right-style status-style synchronize-panes
-\ terminal-overrides update-environment user-keys visual-activity
-\ visual-bell visual-silence window-active-style window-status-activity-attr
-\ window-status-activity-bg window-status-activity-fg
-\ window-status-activity-style window-status-attr window-status-bell-attr
-\ window-status-bell-bg window-status-bell-fg window-status-bell-style
-\ window-status-bg window-status-current-attr window-status-current-bg
-\ window-status-current-fg window-status-current-format
-\ window-status-current-style window-status-fg window-status-format
-\ window-status-last-attr window-status-last-bg window-status-last-fg
-\ window-status-last-style window-status-separator window-status-style
-\ window-style word-separators wrap-search xterm-keys
+\ set-titles-string silence-action status status-attr status-bg status-fg
+\ status-interval status-justify status-keys status-left status-left-attr
+\ status-left-bg status-left-fg status-left-length status-left-style
+\ status-position status-right status-right-attr status-right-bg
+\ status-right-fg status-right-length status-right-style status-style
+\ synchronize-panes terminal-overrides update-environment user-keys
+\ visual-activity visual-bell visual-silence window-active-style
+\ window-status-activity-attr window-status-activity-bg
+\ window-status-activity-fg window-status-activity-style window-status-attr
+\ window-status-bell-attr window-status-bell-bg window-status-bell-fg
+\ window-status-bell-style window-status-bg window-status-current-attr
+\ window-status-current-bg window-status-current-fg
+\ window-status-current-format window-status-current-style window-status-fg
+\ window-status-format window-status-last-attr window-status-last-bg
+\ window-status-last-fg window-status-last-style window-status-separator
+\ window-status-style window-style word-separators wrap-search xterm-keys
 
 syn keyword tmuxCommands
 \ attach attach-session bind bind-key break-pane breakp capture-pane
