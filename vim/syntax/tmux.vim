@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 2.5 (git-58744de3)
+" Version: 2.5 (git-07a13697)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -73,7 +73,7 @@ syn keyword tmuxOptions
 \ alternate-screen automatic-rename automatic-rename-format
 \ clock-mode-colour clock-mode-style force-height force-width
 \ main-pane-height main-pane-width mode-attr mode-bg mode-fg mode-keys
-\ mode-style monitor-activity monitor-silence other-pane-height
+\ mode-style monitor-activity monitor-bell monitor-silence other-pane-height
 \ other-pane-width pane-active-border-bg pane-active-border-fg
 \ pane-active-border-style pane-base-index pane-border-bg pane-border-fg
 \ pane-border-format pane-border-status pane-border-style prefix2
