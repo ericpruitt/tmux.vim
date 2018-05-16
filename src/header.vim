@@ -34,6 +34,8 @@ syn region tmuxComment start=/#/ skip=/\\\@<!\\$/ end=/$/ contains=tmuxTodo
 syn region tmuxString start=+"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=tmuxFormatString
 syn region tmuxString start=+'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end='$' contains=tmuxFormatString
 
+syn match tmuxNextLine "\\\n\s*" containedin=tmuxComment,tmuxString
+
 " TODO: Figure out how escaping works inside of #(...) and #{...} blocks.
 syn region tmuxFormatString start=/#[#DFhHIPSTW]/ end=// contained keepend
 syn region tmuxFormatString start=/#{/ skip=/#{.\{-}}/ end=/}/ contained keepend
@@ -52,6 +54,7 @@ hi def link tmuxString            String
 hi def link tmuxTodo              Todo
 hi def link tmuxVariable          Identifier
 hi def link tmuxVariableExpansion Identifier
+hi def link tmuxNextLine          Special
 
 " Make the foreground of colourXXX keywords match the color they represent.
 " Darker colors have their background set to white.
