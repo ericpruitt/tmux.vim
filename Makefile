@@ -12,10 +12,10 @@ PUSH_AFTER_SYNC = false
 # default.
 DEFAULT_REMOTE = git@github.com:ericpruitt/tmux.vim.git
 
-TMUX_GIT_DIR = tmux/.git
+TMUX_DIR = ./tmux
 TMUX_SYNTAX_FILE = vim/syntax/tmux.vim
 TMUX_URL = https://github.com/tmux/tmux.git
-TMUX_VERSION=$$(cd $(TMUX_GIT_DIR) && \
+TMUX_VERSION=$$(cd $(TMUX_DIR) && \
 	git log -1 --format="$$(git describe --abbrev=0 --tags) (git-%h)" \
 )
 
@@ -24,10 +24,10 @@ all: build
 install:
 	set -x && cp -i -R vim/*/ ~/.vim/
 
-$(TMUX_GIT_DIR):
+$(TMUX_DIR):
 	git clone $(TMUX_URL) $(@D)
 
-$(TMUX_SYNTAX_FILE): $(TMUX_GIT_DIR) src/header.vim src/footer.vim src/dump-keywords.awk
+$(TMUX_SYNTAX_FILE): $(TMUX_DIR) src/header.vim src/footer.vim src/dump-keywords.awk
 	sed "s/TMUX_VERSION/$(TMUX_VERSION)/" src/header.vim > $@.tmp
 	awk -f src/dump-keywords.awk tmux/*.c >> $@.tmp
 	cat src/footer.vim >> $@.tmp
@@ -40,14 +40,14 @@ $(TMUX_SYNTAX_FILE): $(TMUX_GIT_DIR) src/header.vim src/footer.vim src/dump-keyw
 	rm -f $@.tmp; \
 	echo "No change in options between commits; syntax file unchanged."
 
-build: $(TMUX_GIT_DIR)
+build: $(TMUX_DIR)
 	TMUX_VERSION=$(TMUX_VERSION); \
 	export TMUX_VERSION; \
 	grep -e "$$TMUX_VERSION" -F -q $(TMUX_SYNTAX_FILE) 2>/dev/null || \
 		touch src/*; \
 	$(MAKE) $(TMUX_SYNTAX_FILE)
 
-sync: $(TMUX_GIT_DIR)
+sync: $(TMUX_DIR)
 	if [ -n "$$(git diff --name-only --cached)" ]; then \
 		echo "Found staged changes; refusing to update." >&2; \
 		exit 1; \
@@ -56,7 +56,7 @@ sync: $(TMUX_GIT_DIR)
 		echo "$(TMUX_SYNTAX_FILE) modified; refusing to update." >&2; \
 		exit 1; \
 	fi
-	(cd tmux && git pull --quiet)
+	(cd $(TMUX_DIR) && git pull --quiet)
 	git stash --quiet
 	$(MAKE)
 	if ! git diff --quiet $(TMUX_SYNTAX_FILE); then \
