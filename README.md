@@ -19,7 +19,7 @@ some changes:
   background is changed to white since the text might otherwise be invisible.
 - Distinct highlighting has been added for interpolated blocks (`#[...]`,
   `#(...)` and `#{...}`).
-- Multi-line strings are supported and correctly correctly highlighted.
+- Multi-line strings are supported and correctly highlighted.
 - The highlighting style has been modified; what is considered a boolean,
   identifier, etc. in this version of the syntax file differs from Keith's.
 
