@@ -32,6 +32,9 @@ under the [2-clause BSD license][bsd-2-clause].
 Installation
 ------------
 
+The syntax file is included with Vim as of version 8.0.0420, but users wanting
+a more up-to-date syntax file can use this repository directly.
+
 ### Makefile ###
 
 Assuming _make(1)_ is installed and there is an existing Vim directory at
