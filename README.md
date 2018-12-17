@@ -1,7 +1,7 @@
 tmux.vim
 ========
 
-This repository provides a Vim syntax highlighting file for tmux
+This repository provides a Vim syntax highlighting file for [tmux][tmux]
 configurations. The syntax file is generated directly from the tmux source code
 using an Awk script. A cron job running on a host managed by the maintainer of
 this repository regenerates the syntax file once a day and, if the syntax file
@@ -26,6 +26,7 @@ some changes:
 This project and all accompanying files (unless stated otherwise) are licensed
 under the [2-clause BSD license][bsd-2-clause].
 
+  [tmux]: https://github.com/tmux/tmux/
   [keith-tmux.vim]: https://github.com/keith/tmux.vim
   [bsd-2-clause]: http://opensource.org/licenses/BSD-2-Clause
 
