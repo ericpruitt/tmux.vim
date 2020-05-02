@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: before-OpenBSD-lock (git-7af58172)
+" Version: before-OpenBSD-lock (git-e078f975)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -64,14 +64,14 @@ for s:i in range(0, 255)
 endfor
 
 syn keyword tmuxOptions
-\ backspace buffer-limit command-alias copy-command default-terminal
-\ escape-time exit-empty activity-action assume-paste-time base-index
-\ bell-action default-command default-shell default-size destroy-unattached
+\ backspace buffer-limit command-alias copy-command default-terminal editor
+\ escape-time activity-action assume-paste-time base-index bell-action
+\ default-command default-shell default-size destroy-unattached
 \ detach-on-destroy display-panes-active-colour display-panes-colour
-\ display-panes-time display-time exit-unattached focus-events history-file
-\ history-limit key-table lock-after-time lock-command message-command-style
-\ message-limit message-style aggressive-resize allow-rename
-\ alternate-screen automatic-rename automatic-rename-format
+\ display-panes-time display-time exit-empty exit-unattached focus-events
+\ history-file history-limit key-table lock-after-time lock-command
+\ message-command-style message-limit message-style aggressive-resize
+\ allow-rename alternate-screen automatic-rename automatic-rename-format
 \ clock-mode-colour clock-mode-style copy-mode-current-match-style
 \ copy-mode-match-style main-pane-height main-pane-width mode-keys
 \ mode-style monitor-activity monitor-bell monitor-silence mouse
