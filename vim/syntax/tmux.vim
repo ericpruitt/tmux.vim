@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: before-OpenBSD-lock (git-e078f975)
+" Version: before-OpenBSD-lock (git-5e97d79e)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -92,14 +92,14 @@ syn keyword tmuxOptions
 syn keyword tmuxCommands
 \ attach attach-session bind bind-key break-pane breakp capture-pane
 \ capturep choose-buffer choose-client choose-tree clear-history clearhist
-\ clock-mode command-prompt confirm confirm-before copy-mode detach
-\ detach-client display display-menu display-message display-panes
+\ clock-mode command-prompt confirm confirm-before copy-mode customize-mode
+\ detach detach-client display display-menu display-message display-panes
 \ display-popup displayp find-window findw if if-shell join-pane joinp
-\ kill-pane kill-server kill-session kill-window killp has-session has killw
+\ kill-pane kill-server kill-session kill-window killp has has-session killw
 \ link-window linkw list-buffers list-clients list-commands list-keys
 \ list-panes list-sessions list-windows load-buffer loadb lock lock-client
-\ lock-server lock-session lockc last-pane lastp locks ls last-window last
-\ lsb lsc delete-buffer deleteb lscm lsk lsp lsw menu move-pane move-window
+\ lock-server lock-session lockc last-pane lastp locks ls last last-window
+\ lsb delete-buffer deleteb lsc lscm lsk lsp lsw menu move-pane move-window
 \ movep movew new new-session new-window neww next next-layout next-window
 \ nextl paste-buffer pasteb pipe-pane pipep popup prev previous-layout
 \ previous-window prevl refresh refresh-client rename rename-session
