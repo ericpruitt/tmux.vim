@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: before-OpenBSD-lock (git-5e97d79e)
+" Version: before-OpenBSD-lock (git-4cb1d3d7)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -73,17 +73,18 @@ syn keyword tmuxOptions
 \ message-command-style message-limit message-style aggressive-resize
 \ allow-rename alternate-screen automatic-rename automatic-rename-format
 \ clock-mode-colour clock-mode-style copy-mode-current-match-style
-\ copy-mode-match-style main-pane-height main-pane-width mode-keys
-\ mode-style monitor-activity monitor-bell monitor-silence mouse
-\ other-pane-height other-pane-width pane-active-border-style
-\ pane-base-index pane-border-format pane-border-status pane-border-style
-\ prefix prefix2 remain-on-exit renumber-windows repeat-time set-clipboard
-\ set-titles set-titles-string silence-action status status-bg status-fg
-\ status-format status-interval status-justify status-keys status-left
-\ status-left-length status-left-style status-position status-right
-\ status-right-length status-right-style status-style synchronize-panes
-\ terminal-features terminal-overrides update-environment user-keys
-\ visual-activity visual-bell visual-silence window-active-style window-size
+\ copy-mode-mark-style copy-mode-match-style main-pane-height
+\ main-pane-width mode-keys mode-style monitor-activity monitor-bell
+\ monitor-silence mouse other-pane-height other-pane-width
+\ pane-active-border-style pane-base-index pane-border-format
+\ pane-border-status pane-border-style prefix prefix2 remain-on-exit
+\ renumber-windows repeat-time set-clipboard set-titles set-titles-string
+\ silence-action status status-bg status-fg status-format status-interval
+\ status-justify status-keys status-left status-left-length
+\ status-left-style status-position status-right status-right-length
+\ status-right-style status-style synchronize-panes terminal-features
+\ terminal-overrides update-environment user-keys visual-activity
+\ visual-bell visual-silence window-active-style window-size
 \ window-status-activity-style window-status-bell-style
 \ window-status-current-format window-status-current-style
 \ window-status-format window-status-last-style window-status-separator
