@@ -30,10 +30,10 @@ syn match tmuxVariable          /\w\+=/                display
 syn match tmuxVariableExpansion /\${\=\w\+}\=/         display
 syn match tmuxControl           /%\(if\|elif\|else\|endif\)/
 
-syn region tmuxComment start=/#/ skip=/\\\@<!\\$/ end=/$/ contains=tmuxTodo
+syn region tmuxComment start=/#/ skip=/\\\@<!\\$/ end=/$/ contains=tmuxTodo,@Spell
 
-syn region tmuxString start=+"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=tmuxFormatString
-syn region tmuxString start=+'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end='$' contains=tmuxFormatString
+syn region tmuxString start=+"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=tmuxFormatString,@Spell
+syn region tmuxString start=+'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end='$' contains=tmuxFormatString,@Spell
 
 " TODO: Figure out how escaping works inside of #(...) and #{...} blocks.
 syn region tmuxFormatString start=/#[#DFhHIPSTW]/ end=// contained keepend
