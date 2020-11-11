@@ -17,6 +17,8 @@ some changes:
 - When a color is used (e.g. "colour7"), the text's foreground is changed to
   reflect the color that the number represents. For darker colors, the
   background is changed to white since the text might otherwise be invisible.
+  This can be disabled by setting `g:tmux_syntax_colors = 0` in your vimrc
+  file.
 - Distinct highlighting has been added for interpolated blocks (`#[...]`,
   `#(...)` and `#{...}`).
 - Multi-line strings are supported and correctly highlighted.

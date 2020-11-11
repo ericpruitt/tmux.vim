@@ -55,7 +55,8 @@ hi def link tmuxTodo              Todo
 hi def link tmuxVariable          Identifier
 hi def link tmuxVariableExpansion Identifier
 
-" Make the foreground of colourXXX keywords match the color they represent.
+" Make the foreground of colourXXX keywords match the color they represent
+" when g:tmux_syntax_colors is unset or set to a non-zero value.
 " Darker colors have their background set to white.
 if get(g:, "tmux_syntax_colors", 1)
     for s:i in range(0, 255)
