@@ -57,8 +57,10 @@ hi def link tmuxVariableExpansion Identifier
 
 " Make the foreground of colourXXX keywords match the color they represent.
 " Darker colors have their background set to white.
-for s:i in range(0, 255)
-    let s:bg = (!s:i || s:i == 16 || (s:i > 231 && s:i < 235)) ? 15 : "none"
-    exec "syn match tmuxColour" . s:i . " /\\<colour" . s:i . "\\>/ display"
-\     " | highlight tmuxColour" . s:i . " ctermfg=" . s:i . " ctermbg=" . s:bg
-endfor
+if get(g:, "tmux_syntax_colors", 1)
+    for s:i in range(0, 255)
+        let s:bg = (!s:i || s:i == 16 || (s:i > 231 && s:i < 235)) ? 15 : "none"
+        exec "syn match tmuxColour" . s:i . " /\\<colour" . s:i . "\\>/ display"
+\         " | highlight tmuxColour" . s:i . " ctermfg=" . s:i . " ctermbg=" . s:bg
+    endfor
+endif
