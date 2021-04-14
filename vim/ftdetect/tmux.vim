@@ -3,4 +3,4 @@
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " Last Changed: 2017 Mar 10
 
-autocmd BufNewFile,BufRead {.,}tmux.conf setfiletype tmux
+autocmd BufNewFile,BufRead {.,}tmux*.conf* setfiletype tmux
