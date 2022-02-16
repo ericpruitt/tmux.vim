@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.3-rc (git-a5cf7a9b)
+" Version: 3.3-rc (git-85ef7359)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -74,8 +74,8 @@ syn keyword tmuxOptions
 \ display-panes-active-colour display-panes-colour display-panes-time
 \ display-time exit-empty exit-unattached extended-keys focus-events
 \ history-file history-limit key-table lock-after-time lock-command
-\ message-command-style message-limit aggressive-resize allow-rename
-\ alternate-screen automatic-rename automatic-rename-format
+\ message-command-style message-limit aggressive-resize allow-passthrough
+\ allow-rename alternate-screen automatic-rename automatic-rename-format
 \ clock-mode-colour clock-mode-style copy-mode-current-match-style
 \ copy-mode-mark-style copy-mode-match-style main-pane-height
 \ main-pane-width message-style mode-keys mode-style monitor-activity
