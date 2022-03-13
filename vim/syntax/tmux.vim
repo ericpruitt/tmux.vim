@@ -108,19 +108,20 @@ syn keyword tmuxCommands
 \ lock-server lock-session lockc last-pane lastp locks ls last last-window
 \ lsb delete-buffer deleteb lsc lscm lsk lsp lsw menu move-pane move-window
 \ clear-prompt-history clearphist movep movew new new-session new-window
-\ neww next next-layout next-window nextl paste-buffer pasteb pipe-pane
-\ pipep popup prev previous-layout previous-window prevl refresh
-\ refresh-client rename rename-session rename-window renamew resize-pane
-\ resize-window resizep resizew respawn-pane respawn-window respawnp
-\ respawnw rotate-window rotatew run run-shell save-buffer saveb
-\ select-layout select-pane select-window selectl selectp selectw send
-\ send-keys send-prefix set set-buffer set-environment set-hook set-option
-\ set-window-option setb setenv setw show show-buffer show-environment
-\ show-hooks show-messages show-options show-prompt-history
-\ show-window-options showb showenv showmsgs showphist showw source
-\ source-file split-window splitw start start-server suspend-client suspendc
-\ swap-pane swap-window swapp swapw switch-client switchc unbind unbind-key
-\ unlink-window unlinkw wait wait-for
+\ neww next next-layout choose-window choose-session info next-window nextl
+\ paste-buffer pasteb pipe-pane pipep popup prev previous-layout
+\ previous-window prevl refresh refresh-client rename rename-session
+\ rename-window renamew resize-pane resize-window resizep resizew
+\ respawn-pane respawn-window respawnp respawnw rotate-window rotatew run
+\ run-shell save-buffer saveb select-layout select-pane select-window
+\ selectl selectp selectw send send-keys send-prefix server-info set
+\ set-buffer set-environment set-hook set-option set-window-option setb
+\ setenv setw show show-buffer show-environment show-hooks show-messages
+\ show-options show-prompt-history show-window-options showb showenv
+\ showmsgs showphist showw source source-file split-pane split-window splitp
+\ splitw start start-server suspend-client suspendc swap-pane swap-window
+\ swapp swapw switch-client switchc unbind unbind-key unlink-window unlinkw
+\ wait wait-for
 
 let &cpo = s:original_cpo
 unlet! s:original_cpo s:bg s:i

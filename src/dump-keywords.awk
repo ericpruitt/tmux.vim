@@ -4,6 +4,7 @@ BEGIN {
     tmuxOptions = ""
     inside_cmd_entry = 0
     inside_options_table = 0
+    inside_command_alias = 0
     WRAP_AFTER_COLUMN = 79
 }
 
@@ -15,8 +16,19 @@ inside_options_table && !/NULL/ {
     if (NF && $1 == "};") {
         inside_options_table = 0
     } else if (/\.name/) {
-        gsub(/[^a-z0-9-]/, "", $NF)
-        tmuxOptions = tmuxOptions " " $NF
+        name = $NF
+        gsub(/[^a-z0-9-]/, "", name)
+        tmuxOptions = tmuxOptions " " name
+
+        if (name == "command-alias") {
+            inside_command_alias = 1
+        }
+    } else if (inside_command_alias) {
+        if (/[}],/) {
+            inside_command_alias = 0
+        } else if (match($0, /"[a-z0-9-]+=/)) {
+            tmuxCommands = tmuxCommands " " substr($0, RSTART + 1, RLENGTH - 2)
+        }
     }
 }
 
