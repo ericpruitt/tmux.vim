@@ -67,18 +67,18 @@ if get(g:, "tmux_syntax_colors", 1)
 endif
 
 syn keyword tmuxOptions
-\ backspace buffer-limit command-alias copy-command cursor-colour
-\ cursor-style default-terminal editor escape-time activity-action
-\ assume-paste-time base-index bell-action default-command default-shell
-\ default-size destroy-unattached detach-on-destroy
+\ activity-action aggressive-resize allow-passthrough allow-rename
+\ alternate-screen assume-paste-time automatic-rename
+\ automatic-rename-format backspace base-index bell-action buffer-limit
+\ clock-mode-colour clock-mode-style command-alias copy-command
+\ copy-mode-current-match-style copy-mode-mark-style copy-mode-match-style
+\ cursor-colour cursor-style default-command default-shell default-size
+\ default-terminal destroy-unattached detach-on-destroy
 \ display-panes-active-colour display-panes-colour display-panes-time
-\ display-time exit-empty exit-unattached extended-keys focus-events
-\ history-file history-limit key-table lock-after-time lock-command
-\ message-command-style message-limit aggressive-resize allow-passthrough
-\ allow-rename alternate-screen automatic-rename automatic-rename-format
-\ clock-mode-colour clock-mode-style copy-mode-current-match-style
-\ copy-mode-mark-style copy-mode-match-style main-pane-height
-\ main-pane-width message-style mode-keys mode-style monitor-activity
+\ display-time editor escape-time exit-empty exit-unattached extended-keys
+\ focus-events history-file history-limit key-table lock-after-time
+\ lock-command main-pane-height main-pane-width message-command-style
+\ message-limit message-style mode-keys mode-style monitor-activity
 \ monitor-bell monitor-silence mouse other-pane-height other-pane-width
 \ pane-active-border-style pane-base-index pane-border-format
 \ pane-border-indicators pane-border-lines pane-border-status
@@ -98,30 +98,30 @@ syn keyword tmuxOptions
 
 syn keyword tmuxCommands
 \ attach attach-session bind bind-key break-pane breakp capture-pane
-\ capturep choose-buffer choose-client choose-tree clear-history clearhist
+\ capturep choose-buffer choose-client choose-session choose-tree
+\ choose-window clear-history clear-prompt-history clearhist clearphist
 \ clock-mode command-prompt confirm confirm-before copy-mode customize-mode
-\ detach detach-client display display-menu display-message display-panes
-\ display-popup displayp find-window findw if if-shell join-pane joinp
-\ kill-pane kill-server kill-session kill-window killp has has-session killw
+\ delete-buffer deleteb detach detach-client display display-menu
+\ display-message display-panes display-popup displayp find-window findw has
+\ has-session if if-shell info join-pane joinp kill-pane kill-server
+\ kill-session kill-window killp killw last last-pane last-window lastp
 \ link-window linkw list-buffers list-clients list-commands list-keys
 \ list-panes list-sessions list-windows load-buffer loadb lock lock-client
-\ lock-server lock-session lockc last-pane lastp locks ls last last-window
-\ lsb delete-buffer deleteb lsc lscm lsk lsp lsw menu move-pane move-window
-\ clear-prompt-history clearphist movep movew new new-session new-window
-\ neww next next-layout choose-window choose-session info next-window nextl
-\ paste-buffer pasteb pipe-pane pipep popup prev previous-layout
-\ previous-window prevl refresh refresh-client rename rename-session
-\ rename-window renamew resize-pane resize-window resizep resizew
-\ respawn-pane respawn-window respawnp respawnw rotate-window rotatew run
-\ run-shell save-buffer saveb select-layout select-pane select-window
-\ selectl selectp selectw send send-keys send-prefix server-info set
-\ set-buffer set-environment set-hook set-option set-window-option setb
-\ setenv setw show show-buffer show-environment show-hooks show-messages
-\ show-options show-prompt-history show-window-options showb showenv
-\ showmsgs showphist showw source source-file split-pane split-window splitp
-\ splitw start start-server suspend-client suspendc swap-pane swap-window
-\ swapp swapw switch-client switchc unbind unbind-key unlink-window unlinkw
-\ wait wait-for
+\ lock-server lock-session lockc locks ls lsb lsc lscm lsk lsp lsw menu
+\ move-pane move-window movep movew new new-session new-window neww next
+\ next-layout next-window nextl paste-buffer pasteb pipe-pane pipep popup
+\ prev previous-layout previous-window prevl refresh refresh-client rename
+\ rename-session rename-window renamew resize-pane resize-window resizep
+\ resizew respawn-pane respawn-window respawnp respawnw rotate-window
+\ rotatew run run-shell save-buffer saveb select-layout select-pane
+\ select-window selectl selectp selectw send send-keys send-prefix
+\ server-info set set-buffer set-environment set-hook set-option
+\ set-window-option setb setenv setw show show-buffer show-environment
+\ show-hooks show-messages show-options show-prompt-history
+\ show-window-options showb showenv showmsgs showphist showw source
+\ source-file split-pane split-window splitp splitw start start-server
+\ suspend-client suspendc swap-pane swap-window swapp swapw switch-client
+\ switchc unbind unbind-key unlink-window unlinkw wait wait-for
 
 let &cpo = s:original_cpo
 unlet! s:original_cpo s:bg s:i

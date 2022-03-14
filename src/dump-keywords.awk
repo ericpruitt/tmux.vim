@@ -63,11 +63,13 @@ END {
 
         # Sort keywords so re-ordering in the source code does not cause the
         # syntax files to change.
-        for (k = head = 1; k < NF; k = ((k + 1) == NF ? head++ : k + 1)) {
-            if ($k > $(k + 1)) {
-                temp = $k
-                $k = $(k + 1)
-                $(k + 1) = temp
+        for (j = 1; j <= NF; j++) {
+            for (k = 1; k <= NF; k++) {
+                if ($j < $k) {
+                    temp = $j
+                    $j = $k
+                    $k = temp
+                }
             }
         }
 
