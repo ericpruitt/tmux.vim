@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.3-rc (git-ee3f1d25)
+" Version: 3.3-rc (git-5d4c3ef7)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -76,22 +76,22 @@ syn keyword tmuxOptions
 \ default-terminal destroy-unattached detach-on-destroy
 \ display-panes-active-colour display-panes-colour display-panes-time
 \ display-time editor escape-time exit-empty exit-unattached extended-keys
-\ focus-events history-file history-limit key-table lock-after-time
-\ lock-command main-pane-height main-pane-width message-command-style
-\ message-limit message-style mode-keys mode-style monitor-activity
-\ monitor-bell monitor-silence mouse other-pane-height other-pane-width
-\ pane-active-border-style pane-base-index pane-border-format
-\ pane-border-indicators pane-border-lines pane-border-status
-\ pane-border-style pane-colours popup-border-lines popup-border-style
-\ popup-style prefix prefix2 prompt-history-limit remain-on-exit
-\ remain-on-exit-format renumber-windows repeat-time set-clipboard
-\ set-titles set-titles-string silence-action status status-bg status-fg
-\ status-format status-interval status-justify status-keys status-left
-\ status-left-length status-left-style status-position status-right
-\ status-right-length status-right-style status-style synchronize-panes
-\ terminal-features terminal-overrides update-environment user-keys
-\ visual-activity visual-bell visual-silence window-active-style window-size
-\ window-status-activity-style window-status-bell-style
+\ fill-character focus-events history-file history-limit key-table
+\ lock-after-time lock-command main-pane-height main-pane-width
+\ message-command-style message-limit message-style mode-keys mode-style
+\ monitor-activity monitor-bell monitor-silence mouse other-pane-height
+\ other-pane-width pane-active-border-style pane-base-index
+\ pane-border-format pane-border-indicators pane-border-lines
+\ pane-border-status pane-border-style pane-colours popup-border-lines
+\ popup-border-style popup-style prefix prefix2 prompt-history-limit
+\ remain-on-exit remain-on-exit-format renumber-windows repeat-time
+\ set-clipboard set-titles set-titles-string silence-action status status-bg
+\ status-fg status-format status-interval status-justify status-keys
+\ status-left status-left-length status-left-style status-position
+\ status-right status-right-length status-right-style status-style
+\ synchronize-panes terminal-features terminal-overrides update-environment
+\ user-keys visual-activity visual-bell visual-silence window-active-style
+\ window-size window-status-activity-style window-status-bell-style
 \ window-status-current-format window-status-current-style
 \ window-status-format window-status-last-style window-status-separator
 \ window-status-style window-style word-separators wrap-search
