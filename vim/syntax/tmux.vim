@@ -22,7 +22,7 @@ syn keyword tmuxBoolean off on yes no
 
 syn keyword tmuxTodo FIXME NOTE TODO XXX contained
 
-syn match tmuxColour            /\<colour[0-9]\+\>/    display
+syn match tmuxColour            /\<colou\?r[0-9]\+\>/  display
 syn match tmuxKey               /\(C-\|M-\|\^\)\+\S\+/ display
 syn match tmuxNumber            /\<\d\+\>/             display
 syn match tmuxFlags             /\s-\a\+/              display
@@ -70,7 +70,7 @@ hi def link tmuxVariableExpansion Identifier
 if get(g:, "tmux_syntax_colors", 1)
     for s:i in range(0, 255)
         let s:bg = (!s:i || s:i == 16 || (s:i > 231 && s:i < 235)) ? 15 : "none"
-        exec "syn match tmuxColour" . s:i . " /\\<colour" . s:i . "\\>/ display"
+        exec "syn match tmuxColour" . s:i . " /\\<colou\\?r" . s:i . "\\>/ display"
 \         " | highlight tmuxColour" . s:i . " ctermfg=" . s:i . " ctermbg=" . s:bg
     endfor
 endif
