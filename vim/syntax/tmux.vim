@@ -91,11 +91,12 @@ syn keyword tmuxOptions
 \ assume-paste-time automatic-rename automatic-rename-format backspace
 \ base-index bell-action buffer-limit client-active client-attached
 \ client-detached client-focus-in client-focus-out client-resized
-\ client-session-changed clock-mode-colour clock-mode-style command-alias
-\ copy-command copy-mode-current-match-style copy-mode-mark-style
-\ copy-mode-match-style cursor-colour cursor-style default-command
-\ default-shell default-size default-terminal destroy-unattached
-\ detach-on-destroy display-panes-active-colour display-panes-colour
+\ client-session-changed clock-mode-color clock-mode-colour clock-mode-style
+\ command-alias copy-command copy-mode-current-match-style
+\ copy-mode-mark-style copy-mode-match-style cursor-color cursor-colour
+\ cursor-style default-command default-shell default-size default-terminal
+\ destroy-unattached detach-on-destroy display-panes-active-color
+\ display-panes-active-colour display-panes-color display-panes-colour
 \ display-panes-time display-time editor escape-time exit-empty
 \ exit-unattached extended-keys fill-character focus-events history-file
 \ history-limit key-table lock-after-time lock-command main-pane-height
@@ -103,9 +104,9 @@ syn keyword tmuxOptions
 \ mode-keys mode-style monitor-activity monitor-bell monitor-silence mouse
 \ other-pane-height other-pane-width pane-active-border-style
 \ pane-base-index pane-border-format pane-border-indicators
-\ pane-border-lines pane-border-status pane-border-style pane-colours
-\ pane-died pane-exited pane-focus-in pane-focus-out pane-mode-changed
-\ pane-set-clipboard pane-title-changed popup-border-lines
+\ pane-border-lines pane-border-status pane-border-style pane-colors
+\ pane-colours pane-died pane-exited pane-focus-in pane-focus-out
+\ pane-mode-changed pane-set-clipboard pane-title-changed popup-border-lines
 \ popup-border-style popup-style prefix prefix2 prompt-history-limit
 \ remain-on-exit remain-on-exit-format renumber-windows repeat-time
 \ scroll-on-clear session-closed session-created session-renamed

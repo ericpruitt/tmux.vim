@@ -63,6 +63,15 @@ END {
             $0 = tmuxCommands
         }
 
+        # Add entries for American spelling of "color." The terms are processed
+        # backwards since adding the new terms will change the value of NF.
+        for (k = NF; k > 0; k--) {
+            if ((name = $k) ~ /colour/) {
+                gsub(/colour/, "color", name)
+                $0 = $0 " " name
+            }
+        }
+
         # Sort keywords so re-ordering in the source code does not cause the
         # syntax files to change.
         for (j = 1; j <= NF; j++) {
