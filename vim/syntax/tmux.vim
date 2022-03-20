@@ -43,7 +43,7 @@ syn region tmuxFormatString start=/#(/ skip=/#(.\{-})/ end=/)/ contained keepend
 " At the time of this writing, the latest tmux release will parse a line
 " reading "abc=xyz set-option ..." as an assignment followed by a command
 " hence the presence of "\s" in the "end" argument.
-syn region tmuxAssignment matchgroup=tmuxVariable start=/^\s*[A-Za-z_]\w*=\@=/ skip=/\\$\|\\\s\|=/ end=/\s\|$/ contains=tmuxString,tmuxUninterpolatedString,tmuxVariableExpansion,tmuxControl,tmuxEscape
+syn region tmuxAssignment matchgroup=tmuxVariable start=/^\s*[A-Za-z_]\w*=\@=/ skip=/\\$\|\\\s/ end=/\s\|$/ contains=tmuxString,tmuxUninterpolatedString,tmuxVariableExpansion,tmuxControl,tmuxEscape
 
 hi def link tmuxFormatString      Identifier
 hi def link tmuxAction            Boolean
