@@ -26,14 +26,15 @@ syn match tmuxColour            /\<colour[0-9]\+/      display
 syn match tmuxKey               /\(C-\|M-\|\^\)\+\S\+/ display
 syn match tmuxNumber            /\<\d\+\>/             display
 syn match tmuxFlags             /\s-\a\+/              display
-syn match tmuxVariable          /\w\+=/                display
-syn match tmuxVariableExpansion /\${\=\w\+}\=/         display
+syn match tmuxVariable          /[A-Za-z_]\w*=/        display
+syn match tmuxVariableExpansion /\${\=[A-Za-z_]\w*}\=/ display
 syn match tmuxControl           /%\(if\|elif\|else\|endif\)/
+syn match tmuxEscape            /\\\(u\x\{4\}\|U\x\{8\}\|\o\{3\}\|[\\ernt$]\)/ display
 
 syn region tmuxComment start=/#/ skip=/\\\@<!\\$/ end=/$/ contains=tmuxTodo,@Spell
 
-syn region tmuxString start=+"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=tmuxFormatString,@Spell
-syn region tmuxString start=+'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end='$' contains=tmuxFormatString,@Spell
+syn region tmuxString start=+"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=tmuxFormatString,tmuxEscape,tmuxVariableExpansion,@Spell
+syn region tmuxUninterpolatedString start=+'+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end='$' contains=tmuxFormatString,@Spell
 
 " TODO: Figure out how escaping works inside of #(...) and #{...} blocks.
 syn region tmuxFormatString start=/#[#DFhHIPSTW]/ end=// contained keepend
@@ -46,12 +47,16 @@ hi def link tmuxBoolean           Boolean
 hi def link tmuxCommands          Keyword
 hi def link tmuxControl           Keyword
 hi def link tmuxComment           Comment
+hi def link tmuxEscape            Special
+hi def link tmuxEscapeUnquoted    Special
 hi def link tmuxKey               Special
 hi def link tmuxNumber            Number
 hi def link tmuxFlags             Identifier
 hi def link tmuxOptions           Function
 hi def link tmuxString            String
 hi def link tmuxTodo              Todo
+hi def link tmuxUninterpolatedString
+\                                 String
 hi def link tmuxVariable          Identifier
 hi def link tmuxVariableExpansion Identifier
 
