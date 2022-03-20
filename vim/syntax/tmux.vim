@@ -22,12 +22,12 @@ syn keyword tmuxBoolean off on yes no
 
 syn keyword tmuxTodo FIXME NOTE TODO XXX contained
 
-syn match tmuxColour            /\<colour[0-9]\+/      display
+syn match tmuxColour            /\<colour[0-9]\+\>/    display
 syn match tmuxKey               /\(C-\|M-\|\^\)\+\S\+/ display
 syn match tmuxNumber            /\<\d\+\>/             display
 syn match tmuxFlags             /\s-\a\+/              display
 syn match tmuxVariableExpansion /\$\({[A-Za-z_]\w*}\|[A-Za-z_]\w*\)/ display
-syn match tmuxControl           /^\s*%\(if\|elif\|else\|endif\)/
+syn match tmuxControl           /^\s*%\(if\|elif\|else\|endif\)\>/
 syn match tmuxEscape            /\\\(u\x\{4\}\|U\x\{8\}\|\o\{3\}\|[\\ernt$]\)/ display
 
 syn region tmuxComment start=/#/ skip=/\\\@<!\\$/ end=/$/ contains=tmuxTodo,@Spell
