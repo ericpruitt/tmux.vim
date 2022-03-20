@@ -18,7 +18,7 @@ syntax iskeyword @,48-57,_,192-255,-
 syntax case match
 
 syn keyword tmuxAction  none any current other
-syn keyword tmuxBoolean off on
+syn keyword tmuxBoolean off on yes no
 
 syn keyword tmuxTodo FIXME NOTE TODO XXX contained
 
