@@ -117,7 +117,7 @@ syn keyword tmuxOptions
 \ window-status-current-format window-status-current-style
 \ window-status-format window-status-last-style window-status-separator
 \ window-status-style window-style window-unlinked word-separators
-\ wrap-search
+\ wrap-search xterm-keys
 
 syn keyword tmuxCommands
 \ attach attach-session bind bind-key break-pane breakp capture-pane

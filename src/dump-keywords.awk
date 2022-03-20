@@ -18,9 +18,8 @@ inside_options_table && !/NULL/ {
     } else if (/OPTIONS_TABLE[^"]*_HOOK\("/ && match($0, /"[^"]+"/)) {
         name = substr($0, RSTART + 1, RLENGTH - 2)
         tmuxOptions = tmuxOptions " " name
-    } else if (/\.name/) {
-        name = $NF
-        gsub(/[^a-z0-9-]/, "", name)
+    } else if (/\.name/ && match($0, /"[^"]+"/)) {
+        name = substr($0, RSTART + 1, RLENGTH - 2)
         tmuxOptions = tmuxOptions " " name
 
         if (name == "command-alias") {
@@ -42,9 +41,9 @@ inside_options_table && !/NULL/ {
 inside_cmd_entry && !/NULL/ {
     if (NF && $1 == "};") {
         inside_cmd_entry = 0
-    } else if (/\.(name|alias)/) {
-        gsub(/[^a-z0-9-]/, "", $NF)
-        tmuxCommands = tmuxCommands " " $NF
+    } else if (/\.(name|alias)/ && match($0, /"[^"]+"/)) {
+        name_or_alias = substr($0, RSTART + 1, RLENGTH - 2)
+        tmuxCommands = tmuxCommands " " name_or_alias
     }
 }
 
