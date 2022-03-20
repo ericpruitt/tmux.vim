@@ -45,7 +45,7 @@ hi def link tmuxFormatString      Identifier
 hi def link tmuxAction            Boolean
 hi def link tmuxBoolean           Boolean
 hi def link tmuxCommands          Keyword
-hi def link tmuxControl           Keyword
+hi def link tmuxControl           PreCondit
 hi def link tmuxComment           Comment
 hi def link tmuxEscape            Special
 hi def link tmuxEscapeUnquoted    Special
