@@ -26,7 +26,6 @@ syn match tmuxColour            /\<colour[0-9]\+/      display
 syn match tmuxKey               /\(C-\|M-\|\^\)\+\S\+/ display
 syn match tmuxNumber            /\<\d\+\>/             display
 syn match tmuxFlags             /\s-\a\+/              display
-syn match tmuxVariable          /[A-Za-z_]\w*=/        display
 syn match tmuxVariableExpansion /\${\=[A-Za-z_]\w*}\=/ display
 syn match tmuxControl           /^\s*%\(if\|elif\|else\|endif\)/
 syn match tmuxEscape            /\\\(u\x\{4\}\|U\x\{8\}\|\o\{3\}\|[\\ernt$]\)/ display
@@ -40,6 +39,11 @@ syn region tmuxUninterpolatedString start=+'+ skip=+\\\\\|\\'\|\\$+ excludenl en
 syn region tmuxFormatString start=/#[#DFhHIPSTW]/ end=// contained keepend
 syn region tmuxFormatString start=/#{/ skip=/#{.\{-}}/ end=/}/ keepend
 syn region tmuxFormatString start=/#(/ skip=/#(.\{-})/ end=/)/ contained keepend
+
+" At the time of this writing, the latest tmux release will parse a line
+" reading "abc=xyz set-option ..." as an assignment followed by a command
+" hence the presence of "\s" in the "end" argument.
+syn region tmuxAssignment matchgroup=tmuxVariable start=/^\s*[A-Za-z_]\w*=\@=/ skip=/\\$\|\\\s\|=/ end=/\s\|$/ contains=tmuxString,tmuxUninterpolatedString,tmuxVariableExpansion,tmuxControl,tmuxEscape
 
 hi def link tmuxFormatString      Identifier
 hi def link tmuxAction            Boolean
