@@ -15,6 +15,9 @@ BEGIN {
 inside_options_table && !/NULL/ {
     if (NF && $1 == "};") {
         inside_options_table = 0
+    } else if (/OPTIONS_TABLE[^"]*_HOOK\("/ && match($0, /"[^"]+"/)) {
+        name = substr($0, RSTART + 1, RLENGTH - 2)
+        tmuxOptions = tmuxOptions " " name
     } else if (/\.name/) {
         name = $NF
         gsub(/[^a-z0-9-]/, "", name)

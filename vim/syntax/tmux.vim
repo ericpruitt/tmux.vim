@@ -72,34 +72,51 @@ if get(g:, "tmux_syntax_colors", 1)
 endif
 
 syn keyword tmuxOptions
-\ activity-action aggressive-resize allow-passthrough allow-rename
-\ alternate-screen assume-paste-time automatic-rename
-\ automatic-rename-format backspace base-index bell-action buffer-limit
-\ clock-mode-colour clock-mode-style command-alias copy-command
-\ copy-mode-current-match-style copy-mode-mark-style copy-mode-match-style
-\ cursor-colour cursor-style default-command default-shell default-size
-\ default-terminal destroy-unattached detach-on-destroy
-\ display-panes-active-colour display-panes-colour display-panes-time
-\ display-time editor escape-time exit-empty exit-unattached extended-keys
-\ fill-character focus-events history-file history-limit key-table
-\ lock-after-time lock-command main-pane-height main-pane-width
-\ message-command-style message-limit message-style mode-keys mode-style
-\ monitor-activity monitor-bell monitor-silence mouse other-pane-height
-\ other-pane-width pane-active-border-style pane-base-index
-\ pane-border-format pane-border-indicators pane-border-lines
-\ pane-border-status pane-border-style pane-colours popup-border-lines
+\ activity-action after-bind-key after-capture-pane after-copy-mode
+\ after-display-message after-display-panes after-kill-pane
+\ after-list-buffers after-list-clients after-list-keys after-list-panes
+\ after-list-sessions after-list-windows after-load-buffer after-lock-server
+\ after-new-session after-new-window after-paste-buffer after-pipe-pane
+\ after-queue after-refresh-client after-rename-session after-rename-window
+\ after-resize-pane after-resize-window after-save-buffer
+\ after-select-layout after-select-pane after-select-window after-send-keys
+\ after-set-buffer after-set-environment after-set-hook after-set-option
+\ after-show-environment after-show-messages after-show-options
+\ after-split-window after-unbind-key aggressive-resize alert-activity
+\ alert-bell alert-silence allow-passthrough allow-rename alternate-screen
+\ assume-paste-time automatic-rename automatic-rename-format backspace
+\ base-index bell-action buffer-limit client-active client-attached
+\ client-detached client-focus-in client-focus-out client-resized
+\ client-session-changed clock-mode-colour clock-mode-style command-alias
+\ copy-command copy-mode-current-match-style copy-mode-mark-style
+\ copy-mode-match-style cursor-colour cursor-style default-command
+\ default-shell default-size default-terminal destroy-unattached
+\ detach-on-destroy display-panes-active-colour display-panes-colour
+\ display-panes-time display-time editor escape-time exit-empty
+\ exit-unattached extended-keys fill-character focus-events history-file
+\ history-limit key-table lock-after-time lock-command main-pane-height
+\ main-pane-width message-command-style message-limit message-style
+\ mode-keys mode-style monitor-activity monitor-bell monitor-silence mouse
+\ other-pane-height other-pane-width pane-active-border-style
+\ pane-base-index pane-border-format pane-border-indicators
+\ pane-border-lines pane-border-status pane-border-style pane-colours
+\ pane-died pane-exited pane-focus-in pane-focus-out pane-mode-changed
+\ pane-set-clipboard pane-title-changed popup-border-lines
 \ popup-border-style popup-style prefix prefix2 prompt-history-limit
 \ remain-on-exit remain-on-exit-format renumber-windows repeat-time
-\ scroll-on-clear set-clipboard set-titles set-titles-string silence-action
-\ status status-bg status-fg status-format status-interval status-justify
-\ status-keys status-left status-left-length status-left-style
-\ status-position status-right status-right-length status-right-style
-\ status-style synchronize-panes terminal-features terminal-overrides
-\ update-environment user-keys visual-activity visual-bell visual-silence
-\ window-active-style window-size window-status-activity-style
-\ window-status-bell-style window-status-current-format
-\ window-status-current-style window-status-format window-status-last-style
-\ window-status-separator window-status-style window-style word-separators
+\ scroll-on-clear session-closed session-created session-renamed
+\ session-window-changed set-clipboard set-titles set-titles-string
+\ silence-action status status-bg status-fg status-format status-interval
+\ status-justify status-keys status-left status-left-length
+\ status-left-style status-position status-right status-right-length
+\ status-right-style status-style synchronize-panes terminal-features
+\ terminal-overrides update-environment user-keys visual-activity
+\ visual-bell visual-silence window-active-style window-layout-changed
+\ window-linked window-pane-changed window-renamed window-resized
+\ window-size window-status-activity-style window-status-bell-style
+\ window-status-current-format window-status-current-style
+\ window-status-format window-status-last-style window-status-separator
+\ window-status-style window-style window-unlinked word-separators
 \ wrap-search
 
 syn keyword tmuxCommands
