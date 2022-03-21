@@ -14,47 +14,28 @@ function add_keyword(group, keyword)
 }
 
 BEGIN {
-    inside_cmd_entry = 0
-    inside_options_table = 0
-    inside_command_alias = 0
     WRAP_AFTER_COLUMN = 79
 }
 
-/options_table_entry options_table\[\] = \{$/ {
-    inside_options_table = 1
-}
-
-inside_options_table && !/NULL/ {
-    if (NF && $1 == "};") {
-        inside_options_table = 0
-    } else if (/OPTIONS_TABLE[^"]*_HOOK\("/ && match($0, /"[^"]+"/)) {
+/options_table_entry options_table\[\] = \{$/,/\};/ {
+    if (/OPTIONS_TABLE[^"]*_HOOK\("/ && match($0, /"[^"]+"/)) {
         name = substr($0, RSTART + 1, RLENGTH - 2)
         add_keyword("tmuxOptions", name)
     } else if (/\.name/ && match($0, /"[^"]+"/)) {
         name = substr($0, RSTART + 1, RLENGTH - 2)
         add_keyword("tmuxOptions", name)
-
-        if (name == "command-alias") {
-            inside_command_alias = 1
-        }
-    } else if (inside_command_alias) {
-        if (/[}],/) {
-            inside_command_alias = 0
-        } else if (match($0, /"[a-z0-9-]+=/)) {
-            name = substr($0, RSTART + 1, RLENGTH - 2)
-            add_keyword("tmuxCommands", name)
-        }
     }
 }
 
-/^const struct cmd_entry.*\{$/ {
-    inside_cmd_entry = 1
+/\.name[ \t]*=[ \t]*"command-alias"/,/\},/ {
+    if (match($0, /"[a-z0-9-]+=/)) {
+        name = substr($0, RSTART + 1, RLENGTH - 2)
+        add_keyword("tmuxCommands", name)
+    }
 }
 
-inside_cmd_entry && !/NULL/ {
-    if (NF && $1 == "};") {
-        inside_cmd_entry = 0
-    } else if (/\.(name|alias)/ && match($0, /"[^"]+"/)) {
+/^const struct cmd_entry.*\{$/,/\};/ {
+    if (/\.(name|alias)/ && match($0, /"[^"]+"/)) {
         name_or_alias = substr($0, RSTART + 1, RLENGTH - 2)
         add_keyword("tmuxCommands", name_or_alias)
     }
