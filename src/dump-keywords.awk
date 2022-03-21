@@ -13,10 +13,6 @@ function add_keyword(group, keyword)
     }
 }
 
-BEGIN {
-    MAX_LINE_LENGTH = 79
-}
-
 /options_table_entry options_table\[\] = \{$/,/\};/ {
     if (/OPTIONS_TABLE[^"]*_HOOK\("/ && match($0, /"[^"]+"/)) {
         name = substr($0, RSTART + 1, RLENGTH - 2)
@@ -53,6 +49,8 @@ BEGIN {
 }
 
 END {
+    MAX_LINE_LENGTH = 79
+
     group_names = "tmuxOptions tmuxCommands tmuxEnums"
     group_count = split(group_names, groups)
 
