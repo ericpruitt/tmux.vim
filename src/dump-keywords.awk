@@ -1,7 +1,19 @@
 #!/usr/bin/awk -f
+
+# Add a keyword to the specified group in an idempotent manner.
+#
+# Arguments:
+# - group
+# - keyword
+#
+function add_keyword(group, keyword)
+{
+    if (!(group in keywords) || !match(keywords[group], " " keyword "($| )")) {
+        keywords[group] = keywords[group] " " keyword
+    }
+}
+
 BEGIN {
-    tmuxCommands = ""
-    tmuxOptions = ""
     inside_cmd_entry = 0
     inside_options_table = 0
     inside_command_alias = 0
@@ -17,10 +29,10 @@ inside_options_table && !/NULL/ {
         inside_options_table = 0
     } else if (/OPTIONS_TABLE[^"]*_HOOK\("/ && match($0, /"[^"]+"/)) {
         name = substr($0, RSTART + 1, RLENGTH - 2)
-        tmuxOptions = tmuxOptions " " name
+        add_keyword("tmuxOptions", name)
     } else if (/\.name/ && match($0, /"[^"]+"/)) {
         name = substr($0, RSTART + 1, RLENGTH - 2)
-        tmuxOptions = tmuxOptions " " name
+        add_keyword("tmuxOptions", name)
 
         if (name == "command-alias") {
             inside_command_alias = 1
@@ -29,7 +41,8 @@ inside_options_table && !/NULL/ {
         if (/[}],/) {
             inside_command_alias = 0
         } else if (match($0, /"[a-z0-9-]+=/)) {
-            tmuxCommands = tmuxCommands " " substr($0, RSTART + 1, RLENGTH - 2)
+            name = substr($0, RSTART + 1, RLENGTH - 2)
+            add_keyword("tmuxCommands", name)
         }
     }
 }
@@ -43,25 +56,24 @@ inside_cmd_entry && !/NULL/ {
         inside_cmd_entry = 0
     } else if (/\.(name|alias)/ && match($0, /"[^"]+"/)) {
         name_or_alias = substr($0, RSTART + 1, RLENGTH - 2)
-        tmuxCommands = tmuxCommands " " name_or_alias
+        add_keyword("tmuxCommands", name_or_alias)
     }
 }
 
 END {
-    if (!length(tmuxOptions) || !length(tmuxCommands)) {
-        print "Unable to extract keywords from tmux source." > "/dev/fd/2"
-        exit 1
-    }
+    group_names = "tmuxOptions tmuxCommands"
+    group_count = split(group_names, groups)
 
-    i = 0
-    while (i++ < 2) {
-        if (i == 1) {
-            printf "\nsyn keyword tmuxOptions"
-            $0 = tmuxOptions
-        } else {
-            printf "\n\nsyn keyword tmuxCommands"
-            $0 = tmuxCommands
+    for (i = 1; i <= group_count; i++) {
+        group = groups[i]
+
+        if (!(group in keywords)) {
+            print "no keywords for " group " found" > "/dev/fd/2"
+            close("/dev/fd/2")
+            exit 1
         }
+
+        $0 = keywords[group]
 
         # Add entries for American spelling of "color." The terms are processed
         # backwards since adding the new terms will change the value of NF.
@@ -84,6 +96,8 @@ END {
             }
         }
 
+        printf "\nsyn keyword %s", group
+
         width_left = 0
         for (k = 1; k <= NF; k++) {
             word = $k
@@ -96,6 +110,7 @@ END {
                 width_left = WRAP_AFTER_COLUMN - 3 - wordlen
             }
         }
+
+        printf "\n"
     }
-    printf "\n"
 }
