@@ -17,8 +17,9 @@ let b:current_syntax = "tmux"
 syntax iskeyword @,48-57,_,192-255,-
 syntax case match
 
-syn keyword tmuxAction  none any current other
-syn keyword tmuxBoolean off on yes no
+" The values "yes" and "no" are synonyms for "on" and "off", so they do not
+" appear in the option table file.
+syn keyword tmuxEnums yes no
 
 syn keyword tmuxTodo FIXME NOTE TODO XXX contained
 
@@ -59,6 +60,7 @@ hi def link tmuxBoolean           Boolean
 hi def link tmuxCommands          Keyword
 hi def link tmuxControl           PreCondit
 hi def link tmuxComment           Comment
+hi def link tmuxEnums             Boolean
 hi def link tmuxEscape            Special
 hi def link tmuxEscapeUnquoted    Special
 hi def link tmuxInvalidVariableExpansion

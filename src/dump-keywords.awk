@@ -60,8 +60,19 @@ inside_cmd_entry && !/NULL/ {
     }
 }
 
+/^static const char \*options_table_.*_list\[\]/,/\};/ {
+    while (match($0, /"[^"]+"/)) {
+        name = substr($0, RSTART + 1, RLENGTH - 2)
+        $0 = substr($0, RSTART + RLENGTH + 1)
+
+        if (name !~ /^[0-9]+$/) {
+            add_keyword("tmuxEnums", name)
+        }
+    }
+}
+
 END {
-    group_names = "tmuxOptions tmuxCommands"
+    group_names = "tmuxOptions tmuxCommands tmuxEnums"
     group_count = split(group_names, groups)
 
     for (i = 1; i <= group_count; i++) {
