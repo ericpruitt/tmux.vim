@@ -14,7 +14,7 @@ function add_keyword(group, keyword)
 }
 
 BEGIN {
-    WRAP_AFTER_COLUMN = 79
+    MAX_LINE_LENGTH = 79
 }
 
 /options_table_entry options_table\[\] = \{$/,/\};/ {
@@ -99,7 +99,7 @@ END {
                 width_left -= wordlen
             } else {
                 printf "\n\\ %s", word
-                width_left = WRAP_AFTER_COLUMN - 3 - wordlen
+                width_left = MAX_LINE_LENGTH - 3 - wordlen
             }
         }
 
