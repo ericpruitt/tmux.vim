@@ -30,9 +30,17 @@ syn match tmuxVariableExpansion /\$\({[A-Za-z_]\w*}\|[A-Za-z_]\w*\)/ display
 syn match tmuxControl           /^\s*%\(if\|elif\|else\|endif\)\>/
 syn match tmuxEscape            /\\\(u\x\{4\}\|U\x\{8\}\|\o\{3\}\|[\\ernt$]\)/ display
 
+" Missing closing bracket.
+syn match tmuxInvalidVariableExpansion /\${[^}]*$/ display
+" Starts with invalid character.
+syn match tmuxInvalidVariableExpansion /\${[^A-Za-z_][^}]*}/ display
+syn match tmuxInvalidVariableExpansion /\$[^A-Za-z_{]/ display
+" Contains invalid character.
+syn match tmuxInvalidVariableExpansion /\${[^}]*[^A-Za-z0-9_][^}]*}/ display
+
 syn region tmuxComment start=/#/ skip=/\\\@<!\\$/ end=/$/ contains=tmuxTodo,@Spell
 
-syn region tmuxString start=+"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=tmuxFormatString,tmuxEscape,tmuxVariableExpansion,@Spell
+syn region tmuxString start=+"+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=tmuxFormatString,tmuxEscape,tmuxVariableExpansion,tmuxInvalidVariableExpansion,@Spell
 syn region tmuxUninterpolatedString start=+'+ skip=+\\$+ excludenl end=+'+ end='$' contains=tmuxFormatString,@Spell
 
 " TODO: Figure out how escaping works inside of #(...) and #{...} blocks.
@@ -43,7 +51,7 @@ syn region tmuxFormatString start=/#(/ skip=/#(.\{-})/ end=/)/ contained keepend
 " At the time of this writing, the latest tmux release will parse a line
 " reading "abc=xyz set-option ..." as an assignment followed by a command
 " hence the presence of "\s" in the "end" argument.
-syn region tmuxAssignment matchgroup=tmuxVariable start=/^\s*[A-Za-z_]\w*=\@=/ skip=/\\$\|\\\s/ end=/\s\|$/ contains=tmuxString,tmuxUninterpolatedString,tmuxVariableExpansion,tmuxControl,tmuxEscape
+syn region tmuxAssignment matchgroup=tmuxVariable start=/^\s*[A-Za-z_]\w*=\@=/ skip=/\\$\|\\\s/ end=/\s\|$/ contains=tmuxString,tmuxUninterpolatedString,tmuxVariableExpansion,tmuxControl,tmuxEscape,tmuxInvalidVariableExpansion
 
 hi def link tmuxFormatString      Identifier
 hi def link tmuxAction            Boolean
@@ -53,6 +61,8 @@ hi def link tmuxControl           PreCondit
 hi def link tmuxComment           Comment
 hi def link tmuxEscape            Special
 hi def link tmuxEscapeUnquoted    Special
+hi def link tmuxInvalidVariableExpansion
+\                                 Error
 hi def link tmuxKey               Special
 hi def link tmuxNumber            Number
 hi def link tmuxFlags             Identifier
