@@ -1,4 +1,10 @@
 #!/usr/bin/awk -f
+# This script extracts tmux options, commands and enums from the tmux source
+# code and emits VimL syntax keyword definitions. The usual invocation is
+# something like "awk -f dump-keywords.awk tmux/*.c". All of the logic is
+# file-agnostic, instead relying on the presence of certain patterns in the
+# code, so files being renamed and code being moved around should generally
+# have no impact on this script.
 
 # Add a keyword to the specified group in an idempotent manner.
 #
@@ -24,6 +30,10 @@ function add_keyword(group, keyword)
 }
 
 /\.name[ \t]*=[ \t]*"command-alias"/,/\},/ {
+    # Aliases are defined in the form of "$ALIAS=$EXPANSION", so alias names
+    # are extracted by yanking everything between the first '"' and "=" on each
+    # line. This assumes the tmux developers will always write each alias
+    # definition on a separate line.
     if (match($0, /"[a-z0-9-]+=/)) {
         name = substr($0, RSTART + 1, RLENGTH - 2)
         add_keyword("tmuxCommands", name)
@@ -38,10 +48,15 @@ function add_keyword(group, keyword)
 }
 
 /^static const char \*options_table_.*_list\[\]/,/\};/ {
+    # The "match" function does not accept an offset, so every string is
+    # extracted by deleting the text up to the end of the match then searching
+    # for a string again in the amputated line.
     while (match($0, /"[^"]+"/)) {
         name = substr($0, RSTART + 1, RLENGTH - 2)
         $0 = substr($0, RSTART + RLENGTH + 1)
 
+        # Some options accept specific numbers which will already be matched by
+        # the tmuxNumber pattern.
         if (name !~ /^[0-9]+$/) {
             add_keyword("tmuxEnums", name)
         }
@@ -51,6 +66,8 @@ function add_keyword(group, keyword)
 END {
     MAX_LINE_LENGTH = 79
 
+    # Array iteration order is not portably deterministic, so iterate over keys
+    # in the order defined in "group_names."
     group_names = "tmuxOptions tmuxCommands tmuxEnums"
     group_count = split(group_names, groups)
 
@@ -88,6 +105,8 @@ END {
 
         printf "\nsyn keyword %s", group
 
+        # Dump all of the keywords ensuring the lines are no longer than
+        # MAX_LINE_LENGTH.
         width_left = 0
         for (k = 1; k <= NF; k++) {
             word = $k
