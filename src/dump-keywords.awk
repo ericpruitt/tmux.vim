@@ -10,7 +10,7 @@
 #
 function add_keyword(group, keyword)
 {
-    if (!(group in keywords) || keywords[group] !~ (" " keyword "($| )")) {
+    if (keywords[group] !~ (" " keyword "($| )")) {
         keywords[group] = keywords[group] " " keyword
 
         # Add an entry with the American spelling of "color" as needed.
