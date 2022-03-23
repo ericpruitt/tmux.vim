@@ -8,14 +8,15 @@
 
 # Add a keyword to the specified group in an idempotent manner.
 #
-# Arguments:
-# - group
-# - keyword
-#
 function add_keyword(group, keyword)
 {
-    if (!(group in keywords) || !match(keywords[group], " " keyword "($| )")) {
+    if (!(group in keywords) || keywords[group] !~ (" " keyword "($| )")) {
         keywords[group] = keywords[group] " " keyword
+
+        # Add an entry with the American spelling of "color" as needed.
+        if (gsub(/colour/, "color", keyword)) {
+            keywords[group] = keywords[group] " " keyword
+        }
     }
 }
 
@@ -71,8 +72,8 @@ END {
     group_names = "tmuxOptions tmuxCommands tmuxEnums"
     group_count = split(group_names, groups)
 
-    for (i = 1; i <= group_count; i++) {
-        group = groups[i]
+    for (n = 1; n <= group_count; n++) {
+        group = groups[n]
 
         if (!(group in keywords)) {
             print "no keywords for " group " found" > "/dev/fd/2"
@@ -80,16 +81,8 @@ END {
             exit 1
         }
 
+        printf "\nsyn keyword %s", group
         $0 = keywords[group]
-
-        # Add entries for American spelling of "color." The terms are processed
-        # backwards since adding the new terms will change the value of NF.
-        for (k = NF; k > 0; k--) {
-            if ((name = $k) ~ /colour/) {
-                gsub(/colour/, "color", name)
-                $0 = $0 " " name
-            }
-        }
 
         # Sort keywords so re-ordering in the source code does not cause the
         # syntax files to change.
@@ -103,20 +96,19 @@ END {
             }
         }
 
-        printf "\nsyn keyword %s", group
-
         # Dump all of the keywords ensuring the lines are no longer than
         # MAX_LINE_LENGTH.
-        width_left = 0
-        for (k = 1; k <= NF; k++) {
-            word = $k
-            wordlen = length(word) + 1
-            if (wordlen < width_left) {
-                printf " %s", word
-                width_left -= wordlen
+        remaining_space = 0
+
+        for (word = 1; word <= NF; word++) {
+            width = length($word) + 1
+
+            if (width < remaining_space) {
+                printf " %s", $word
+                remaining_space -= width
             } else {
-                printf "\n\\ %s", word
-                width_left = MAX_LINE_LENGTH - 3 - wordlen
+                printf "\n\\ %s", $word
+                remaining_space = MAX_LINE_LENGTH - 3 - width
             }
         }
 
