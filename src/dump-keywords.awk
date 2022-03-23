@@ -103,12 +103,12 @@ END {
         for (word = 1; word <= NF; word++) {
             width = length($word) + 1
 
-            if (width < remaining_space) {
+            if (width <= remaining_space) {
                 printf " %s", $word
                 remaining_space -= width
             } else {
                 printf "\n\\ %s", $word
-                remaining_space = MAX_LINE_LENGTH - 3 - width
+                remaining_space = MAX_LINE_LENGTH - width - 1
             }
         }
 
