@@ -35,7 +35,7 @@ syn match tmuxEscape            /\\\(u\x\{4\}\|U\x\{8\}\|\o\{3\}\|[\\ernt$]\)/ d
 syn match tmuxInvalidVariableExpansion /\${[^}]*$/ display
 " Starts with invalid character.
 syn match tmuxInvalidVariableExpansion /\${[^A-Za-z_][^}]*}/ display
-syn match tmuxInvalidVariableExpansion /\$[^A-Za-z_{]/ display
+syn match tmuxInvalidVariableExpansion /\$[^A-Za-z_{ \t]/ display
 " Contains invalid character.
 syn match tmuxInvalidVariableExpansion /\${[^}]*[^A-Za-z0-9_][^}]*}/ display
 
