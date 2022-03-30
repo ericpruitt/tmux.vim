@@ -57,8 +57,11 @@ sync: $(TMUX_GIT_DIR)
 		exit 1; \
 	fi
 	(cd tmux && git pull --quiet)
-	git stash --quiet
-	$(MAKE)
+	if ! git diff --quiet; then \
+		git stash --quiet; \
+		trap "git stash pop --quiet" EXIT; \
+	fi; \
+	$(MAKE); \
 	if ! git diff --quiet $(TMUX_SYNTAX_FILE); then \
 		git add $(TMUX_SYNTAX_FILE); \
 		git commit -m "Syntax file refresh for v$(TMUX_VERSION)"; \
@@ -70,4 +73,3 @@ sync: $(TMUX_GIT_DIR)
 			git push -u github master; \
 		fi; \
 	fi
-	git stash pop --quiet || true
