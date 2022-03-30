@@ -48,7 +48,7 @@ build: $(TMUX_GIT_DIR)
 	$(MAKE) $(TMUX_SYNTAX_FILE)
 
 sync: $(TMUX_GIT_DIR)
-	if [ -n "$$(git diff --name-only --cached)" ]; then \
+	if ! git diff --cached --quiet; then \
 		echo "Found staged changes; refusing to update." >&2; \
 		exit 1; \
 	fi
