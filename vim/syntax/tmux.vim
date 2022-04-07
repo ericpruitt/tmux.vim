@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.3-rc (git-964deae4)
+" Version: 3.3-rc (git-8bcd392e)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -152,13 +152,13 @@ syn keyword tmuxCommands
 \ resize-pane resize-window resizep resizew respawn-pane respawn-window
 \ respawnp respawnw rotate-window rotatew run run-shell save-buffer saveb
 \ select-layout select-pane select-window selectl selectp selectw send
-\ send-keys send-prefix server-info set set-buffer set-environment set-hook
-\ set-option set-window-option setb setenv setw show show-buffer
-\ show-environment show-hooks show-messages show-options show-prompt-history
-\ show-window-options showb showenv showmsgs showphist showw source source-file
-\ split-pane split-window splitp splitw start start-server suspend-client
-\ suspendc swap-pane swap-window swapp swapw switch-client switchc unbind
-\ unbind-key unlink-window unlinkw wait wait-for
+\ send-keys send-prefix server-access server-info set set-buffer
+\ set-environment set-hook set-option set-window-option setb setenv setw show
+\ show-buffer show-environment show-hooks show-messages show-options
+\ show-prompt-history show-window-options showb showenv showmsgs showphist
+\ showw source source-file split-pane split-window splitp splitw start
+\ start-server suspend-client suspendc swap-pane swap-window swapp swapw
+\ switch-client switchc unbind unbind-key unlink-window unlinkw wait wait-for
 
 syn keyword tmuxEnums
 \ absolute-centre always any arrows bar blinking-bar blinking-block
