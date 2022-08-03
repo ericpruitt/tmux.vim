@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.3-rc (git-8bcd392e)
+" Version: 3.3a (git-7b8ececd)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -161,7 +161,7 @@ syn keyword tmuxCommands
 \ switch-client switchc unbind unbind-key unlink-window unlinkw wait wait-for
 
 syn keyword tmuxEnums
-\ absolute-centre always any arrows bar blinking-bar blinking-block
+\ absolute-centre all always any arrows bar blinking-bar blinking-block
 \ blinking-underline block both bottom centre color colour current default
 \ double emacs external failed heavy largest latest left manual no-detached
 \ none number off on other padded right rounded simple single smallest top
