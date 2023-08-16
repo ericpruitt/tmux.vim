@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.3a (git-4c60afde)
+" Version: 3.3a (git-3d93b0c5)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -112,27 +112,28 @@ syn keyword tmuxOptions
 \ exit-empty exit-unattached extended-keys fill-character focus-events
 \ history-file history-limit key-table lock-after-time lock-command
 \ main-pane-height main-pane-width menu-border-lines menu-border-style
-\ menu-style message-command-style message-limit message-line message-style
-\ mode-keys mode-style monitor-activity monitor-bell monitor-silence mouse
-\ other-pane-height other-pane-width pane-active-border-style pane-base-index
-\ pane-border-format pane-border-indicators pane-border-lines
-\ pane-border-status pane-border-style pane-colors pane-colours pane-died
-\ pane-exited pane-focus-in pane-focus-out pane-mode-changed pane-set-clipboard
-\ pane-title-changed popup-border-lines popup-border-style popup-style prefix
-\ prefix2 prompt-history-limit remain-on-exit remain-on-exit-format
-\ renumber-windows repeat-time scroll-on-clear session-closed session-created
-\ session-renamed session-window-changed set-clipboard set-titles
-\ set-titles-string silence-action status status-bg status-fg status-format
-\ status-interval status-justify status-keys status-left status-left-length
-\ status-left-style status-position status-right status-right-length
-\ status-right-style status-style synchronize-panes terminal-features
-\ terminal-overrides update-environment user-keys visual-activity visual-bell
-\ visual-silence window-active-style window-layout-changed window-linked
-\ window-pane-changed window-renamed window-resized window-size
-\ window-status-activity-style window-status-bell-style
-\ window-status-current-format window-status-current-style window-status-format
-\ window-status-last-style window-status-separator window-status-style
-\ window-style window-unlinked word-separators wrap-search xterm-keys
+\ menu-selected-style menu-style message-command-style message-limit
+\ message-line message-style mode-keys mode-style monitor-activity monitor-bell
+\ monitor-silence mouse other-pane-height other-pane-width
+\ pane-active-border-style pane-base-index pane-border-format
+\ pane-border-indicators pane-border-lines pane-border-status pane-border-style
+\ pane-colors pane-colours pane-died pane-exited pane-focus-in pane-focus-out
+\ pane-mode-changed pane-set-clipboard pane-title-changed popup-border-lines
+\ popup-border-style popup-style prefix prefix2 prompt-history-limit
+\ remain-on-exit remain-on-exit-format renumber-windows repeat-time
+\ scroll-on-clear session-closed session-created session-renamed
+\ session-window-changed set-clipboard set-titles set-titles-string
+\ silence-action status status-bg status-fg status-format status-interval
+\ status-justify status-keys status-left status-left-length status-left-style
+\ status-position status-right status-right-length status-right-style
+\ status-style synchronize-panes terminal-features terminal-overrides
+\ update-environment user-keys visual-activity visual-bell visual-silence
+\ window-active-style window-layout-changed window-linked window-pane-changed
+\ window-renamed window-resized window-size window-status-activity-style
+\ window-status-bell-style window-status-current-format
+\ window-status-current-style window-status-format window-status-last-style
+\ window-status-separator window-status-style window-style window-unlinked
+\ word-separators wrap-search xterm-keys
 
 syn keyword tmuxCommands
 \ attach attach-session bind bind-key break-pane breakp capture-pane capturep
