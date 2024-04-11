@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.4 (git-608d1134)
+" Version: 3.4 (git-43530d43)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -99,9 +99,9 @@ syn keyword tmuxOptions
 \ after-set-environment after-set-hook after-set-option after-show-environment
 \ after-show-messages after-show-options after-split-window after-unbind-key
 \ aggressive-resize alert-activity alert-bell alert-silence allow-passthrough
-\ allow-rename alternate-screen assume-paste-time automatic-rename
-\ automatic-rename-format backspace base-index bell-action buffer-limit
-\ client-active client-attached client-detached client-focus-in
+\ allow-rename allow-set-title alternate-screen assume-paste-time
+\ automatic-rename automatic-rename-format backspace base-index bell-action
+\ buffer-limit client-active client-attached client-detached client-focus-in
 \ client-focus-out client-resized client-session-changed clock-mode-color
 \ clock-mode-colour clock-mode-style command-alias copy-command
 \ copy-mode-current-match-style copy-mode-mark-style copy-mode-match-style
