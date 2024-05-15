@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.4 (git-43530d43)
+" Version: 3.4 (git-452d987e)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -103,7 +103,7 @@ syn keyword tmuxOptions
 \ automatic-rename automatic-rename-format backspace base-index bell-action
 \ buffer-limit client-active client-attached client-detached client-focus-in
 \ client-focus-out client-resized client-session-changed clock-mode-color
-\ clock-mode-colour clock-mode-style command-alias copy-command
+\ clock-mode-colour clock-mode-style command-alias command-error copy-command
 \ copy-mode-current-match-style copy-mode-mark-style copy-mode-match-style
 \ cursor-color cursor-colour cursor-style default-command default-shell
 \ default-size default-terminal destroy-unattached detach-on-destroy
