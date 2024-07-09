@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.4 (git-452d987e)
+" Version: 3.4 (git-171004df)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -28,7 +28,7 @@ syn match tmuxKey               /\(C-\|M-\|\^\)\+\S\+/ display
 syn match tmuxNumber            /\<\d\+\>/             display
 syn match tmuxFlags             /\s-\a\+/              display
 syn match tmuxVariableExpansion /\$\({[A-Za-z_]\w*}\|[A-Za-z_]\w*\)/ display
-syn match tmuxControl           /\(^\|\s\)%\(if\|elif\|else\|endif\)\($\|\s\)/ display
+syn match tmuxControl           /\(^\|\s\)%\(if\|elif\|else\|endif\|hidden\)\($\|\s\)/ display
 syn match tmuxEscape            /\\\(u\x\{4\}\|U\x\{8\}\|\o\{3\}\|[\\ernt$]\)/ display
 
 " Missing closing bracket.
