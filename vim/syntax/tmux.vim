@@ -109,13 +109,13 @@ syn keyword tmuxOptions
 \ default-size default-terminal destroy-unattached detach-on-destroy
 \ display-panes-active-color display-panes-active-colour display-panes-color
 \ display-panes-colour display-panes-time display-time editor escape-time
-\ exit-empty exit-unattached extended-keys fill-character focus-events
-\ history-file history-limit key-table lock-after-time lock-command
-\ main-pane-height main-pane-width menu-border-lines menu-border-style
-\ menu-selected-style menu-style message-command-style message-limit
-\ message-line message-style mode-keys mode-style monitor-activity monitor-bell
-\ monitor-silence mouse other-pane-height other-pane-width
-\ pane-active-border-style pane-base-index pane-border-format
+\ exit-empty exit-unattached extended-keys extended-keys-format fill-character
+\ focus-events history-file history-limit key-table lock-after-time
+\ lock-command main-pane-height main-pane-width menu-border-lines
+\ menu-border-style menu-selected-style menu-style message-command-style
+\ message-limit message-line message-style mode-keys mode-style
+\ monitor-activity monitor-bell monitor-silence mouse other-pane-height
+\ other-pane-width pane-active-border-style pane-base-index pane-border-format
 \ pane-border-indicators pane-border-lines pane-border-status pane-border-style
 \ pane-colors pane-colours pane-died pane-exited pane-focus-in pane-focus-out
 \ pane-mode-changed pane-set-clipboard pane-title-changed popup-border-lines
@@ -163,10 +163,10 @@ syn keyword tmuxCommands
 
 syn keyword tmuxEnums
 \ absolute-centre all always any arrows bar blinking-bar blinking-block
-\ blinking-underline block both bottom centre color colour current default
-\ double emacs external failed heavy keep-group keep-last largest latest left
-\ manual next no-detached none number off on other padded previous right
-\ rounded simple single smallest top underline vi
+\ blinking-underline block both bottom centre color colour csi-u current
+\ default double emacs external failed heavy keep-group keep-last largest
+\ latest left manual next no-detached none number off on other padded previous
+\ right rounded simple single smallest top underline vi xterm
 
 let &cpo = s:original_cpo
 unlet! s:original_cpo s:bg s:i
