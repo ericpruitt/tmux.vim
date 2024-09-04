@@ -37,7 +37,7 @@ syn match tmuxInvalidVariableExpansion /\${[^}]*$/ display
 syn match tmuxInvalidVariableExpansion /\${[^A-Za-z_][^}]*}/ display
 syn match tmuxInvalidVariableExpansion /\$[^A-Za-z_{ \t]/ display
 " Contains invalid character.
-syn match tmuxInvalidVariableExpansion /\${[^}]*[^A-Za-z0-9_][^}]*}/ display
+syn match tmuxInvalidVariableExpansion /\${[^}]*[^A-Za-z0-9_}][^}]*}/ display
 
 syn region tmuxComment start=/#/ skip=/\\\@<!\\$/ end=/$/ contains=tmuxTodo,@Spell
 
