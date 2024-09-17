@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.4 (git-3d8ead8a)
+" Version: 3.4 (git-64f1076d)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -119,9 +119,9 @@ syn keyword tmuxOptions
 \ pane-border-indicators pane-border-lines pane-border-status pane-border-style
 \ pane-colors pane-colours pane-died pane-exited pane-focus-in pane-focus-out
 \ pane-mode-changed pane-set-clipboard pane-title-changed popup-border-lines
-\ popup-border-style popup-style prefix prefix2 prompt-history-limit
-\ remain-on-exit remain-on-exit-format renumber-windows repeat-time
-\ scroll-on-clear session-closed session-created session-renamed
+\ popup-border-style popup-style prefix prefix-timeout prefix2
+\ prompt-history-limit remain-on-exit remain-on-exit-format renumber-windows
+\ repeat-time scroll-on-clear session-closed session-created session-renamed
 \ session-window-changed set-clipboard set-titles set-titles-string
 \ silence-action status status-bg status-fg status-format status-interval
 \ status-justify status-keys status-left status-left-length status-left-style
