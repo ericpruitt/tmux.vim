@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.5 (git-6a35b8ad)
+" Version: 3.5 (git-1fe30bb2)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -119,9 +119,10 @@ syn keyword tmuxOptions
 \ pane-active-border-style pane-base-index pane-border-format
 \ pane-border-indicators pane-border-lines pane-border-status pane-border-style
 \ pane-colors pane-colours pane-died pane-exited pane-focus-in pane-focus-out
-\ pane-mode-changed pane-set-clipboard pane-title-changed popup-border-lines
-\ popup-border-style popup-style prefix prefix-timeout prefix2
-\ prompt-cursor-color prompt-cursor-colour prompt-cursor-style
+\ pane-mode-changed pane-scrollbars pane-scrollbars-position
+\ pane-scrollbars-style pane-set-clipboard pane-title-changed
+\ popup-border-lines popup-border-style popup-style prefix prefix-timeout
+\ prefix2 prompt-cursor-color prompt-cursor-colour prompt-cursor-style
 \ prompt-history-limit remain-on-exit remain-on-exit-format renumber-windows
 \ repeat-time scroll-on-clear session-closed session-created session-renamed
 \ session-window-changed set-clipboard set-titles set-titles-string
@@ -167,8 +168,8 @@ syn keyword tmuxEnums
 \ absolute-centre all always any arrows bar blinking-bar blinking-block
 \ blinking-underline block both bottom centre color colour csi-u current
 \ default double emacs external failed heavy keep-group keep-last largest
-\ latest left manual next no-detached none number off on other padded previous
-\ right rounded simple single smallest top underline vi xterm
+\ latest left manual modal next no-detached none number off on other padded
+\ previous right rounded simple single smallest top underline vi xterm
 
 let &cpo = s:original_cpo
 unlet! s:original_cpo s:bg s:i
