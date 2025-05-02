@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.5 (git-9e1f110d)
+" Version: 3.5 (git-3d2b26dc)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -132,13 +132,13 @@ syn keyword tmuxOptions
 \ status-justify status-keys status-left status-left-length status-left-style
 \ status-position status-right status-right-length status-right-style
 \ status-style synchronize-panes terminal-features terminal-overrides
-\ update-environment user-keys visual-activity visual-bell visual-silence
-\ window-active-style window-layout-changed window-linked window-pane-changed
-\ window-renamed window-resized window-size window-status-activity-style
-\ window-status-bell-style window-status-current-format
-\ window-status-current-style window-status-format window-status-last-style
-\ window-status-separator window-status-style window-style window-unlinked
-\ word-separators wrap-search xterm-keys
+\ update-environment user-keys variation-selector-always-wide visual-activity
+\ visual-bell visual-silence window-active-style window-layout-changed
+\ window-linked window-pane-changed window-renamed window-resized window-size
+\ window-status-activity-style window-status-bell-style
+\ window-status-current-format window-status-current-style window-status-format
+\ window-status-last-style window-status-separator window-status-style
+\ window-style window-unlinked word-separators wrap-search xterm-keys
 
 syn keyword tmuxCommands
 \ attach attach-session bind bind-key break-pane breakp capture-pane capturep
