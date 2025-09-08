@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.5 (git-bb486604)
+" Version: 3.5 (git-093754db)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -133,7 +133,7 @@ syn keyword tmuxOptions
 \ status-interval status-justify status-keys status-left status-left-length
 \ status-left-style status-position status-right status-right-length
 \ status-right-style status-style synchronize-panes terminal-features
-\ terminal-overrides update-environment user-keys
+\ terminal-overrides tiled-layout-max-columns update-environment user-keys
 \ variation-selector-always-wide visual-activity visual-bell visual-silence
 \ window-active-style window-layout-changed window-linked window-pane-changed
 \ window-renamed window-resized window-size window-status-activity-style
