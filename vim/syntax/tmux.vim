@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.5 (git-093754db)
+" Version: 3.5a (git-f949f9a2)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -169,11 +169,12 @@ syn keyword tmuxCommands
 \ switch-client switchc unbind unbind-key unlink-window unlinkw wait wait-for
 
 syn keyword tmuxEnums
-\ absolute-centre all always any arrows bar blinking-bar blinking-block
-\ blinking-underline block both bottom centre color colour csi-u current
-\ default double emacs external failed heavy keep-group keep-last largest
-\ latest left manual modal next no-detached none number off on other padded
-\ previous right rounded simple single smallest spaces top underline vi xterm
+\ 12-with-seconds 24-with-seconds absolute-centre all always any arrows bar
+\ blinking-bar blinking-block blinking-underline block both bottom centre color
+\ colour csi-u current default double emacs external failed heavy keep-group
+\ keep-last largest latest left manual modal next no-detached none number off
+\ on other padded previous right rounded simple single smallest spaces top
+\ underline vi xterm
 
 let &cpo = s:original_cpo
 unlet! s:original_cpo s:bg s:i
