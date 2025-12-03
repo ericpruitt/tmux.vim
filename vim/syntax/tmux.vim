@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.5a (git-f949f9a2)
+" Version: 3.6 (git-02a8e3fd)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -112,35 +112,35 @@ syn keyword tmuxOptions
 \ destroy-unattached detach-on-destroy display-panes-active-color
 \ display-panes-active-colour display-panes-color display-panes-colour
 \ display-panes-time display-time editor escape-time exit-empty exit-unattached
-\ extended-keys extended-keys-format fill-character focus-events history-file
-\ history-limit initial-repeat-time input-buffer-size key-table lock-after-time
-\ lock-command main-pane-height main-pane-width menu-border-lines
-\ menu-border-style menu-selected-style menu-style message-command-style
-\ message-limit message-line message-style mode-keys mode-style
-\ monitor-activity monitor-bell monitor-silence mouse other-pane-height
-\ other-pane-width pane-active-border-style pane-base-index pane-border-format
-\ pane-border-indicators pane-border-lines pane-border-status pane-border-style
-\ pane-colors pane-colours pane-died pane-exited pane-focus-in pane-focus-out
-\ pane-mode-changed pane-scrollbars pane-scrollbars-position
-\ pane-scrollbars-style pane-set-clipboard pane-status-current-style
-\ pane-status-style pane-title-changed popup-border-lines popup-border-style
-\ popup-style prefix prefix-timeout prefix2 prompt-cursor-color
-\ prompt-cursor-colour prompt-cursor-style prompt-history-limit remain-on-exit
-\ remain-on-exit-format renumber-windows repeat-time scroll-on-clear
-\ session-closed session-created session-renamed session-status-current-style
-\ session-status-style session-window-changed set-clipboard set-titles
-\ set-titles-string silence-action status status-bg status-fg status-format
-\ status-interval status-justify status-keys status-left status-left-length
-\ status-left-style status-position status-right status-right-length
-\ status-right-style status-style synchronize-panes terminal-features
-\ terminal-overrides tiled-layout-max-columns update-environment user-keys
-\ variation-selector-always-wide visual-activity visual-bell visual-silence
-\ window-active-style window-layout-changed window-linked window-pane-changed
-\ window-renamed window-resized window-size window-status-activity-style
-\ window-status-bell-style window-status-current-format
-\ window-status-current-style window-status-format window-status-last-style
-\ window-status-separator window-status-style window-style window-unlinked
-\ word-separators wrap-search xterm-keys
+\ extended-keys extended-keys-format fill-character focus-events get-clipboard
+\ history-file history-limit initial-repeat-time input-buffer-size key-table
+\ lock-after-time lock-command main-pane-height main-pane-width
+\ menu-border-lines menu-border-style menu-selected-style menu-style
+\ message-command-style message-limit message-line message-style mode-keys
+\ mode-style monitor-activity monitor-bell monitor-silence mouse
+\ other-pane-height other-pane-width pane-active-border-style pane-base-index
+\ pane-border-format pane-border-indicators pane-border-lines
+\ pane-border-status pane-border-style pane-colors pane-colours pane-died
+\ pane-exited pane-focus-in pane-focus-out pane-mode-changed pane-scrollbars
+\ pane-scrollbars-position pane-scrollbars-style pane-set-clipboard
+\ pane-status-current-style pane-status-style pane-title-changed
+\ popup-border-lines popup-border-style popup-style prefix prefix-timeout
+\ prefix2 prompt-cursor-color prompt-cursor-colour prompt-cursor-style
+\ prompt-history-limit remain-on-exit remain-on-exit-format renumber-windows
+\ repeat-time scroll-on-clear session-closed session-created session-renamed
+\ session-status-current-style session-status-style session-window-changed
+\ set-clipboard set-titles set-titles-string silence-action status status-bg
+\ status-fg status-format status-interval status-justify status-keys
+\ status-left status-left-length status-left-style status-position status-right
+\ status-right-length status-right-style status-style synchronize-panes
+\ terminal-features terminal-overrides tiled-layout-max-columns
+\ update-environment user-keys variation-selector-always-wide visual-activity
+\ visual-bell visual-silence window-active-style window-layout-changed
+\ window-linked window-pane-changed window-renamed window-resized window-size
+\ window-status-activity-style window-status-bell-style
+\ window-status-current-format window-status-current-style window-status-format
+\ window-status-last-style window-status-separator window-status-style
+\ window-style window-unlinked word-separators wrap-search xterm-keys
 
 syn keyword tmuxCommands
 \ attach attach-session bind bind-key break-pane breakp capture-pane capturep
@@ -170,11 +170,11 @@ syn keyword tmuxCommands
 
 syn keyword tmuxEnums
 \ 12-with-seconds 24-with-seconds absolute-centre all always any arrows bar
-\ blinking-bar blinking-block blinking-underline block both bottom centre color
-\ colour csi-u current default double emacs external failed heavy keep-group
-\ keep-last largest latest left manual modal next no-detached none number off
-\ on other padded previous right rounded simple single smallest spaces top
-\ underline vi xterm
+\ blinking-bar blinking-block blinking-underline block both bottom buffer
+\ centre color colour csi-u current default double emacs external failed heavy
+\ keep-group keep-last largest latest left manual modal next no-detached none
+\ number off on other padded previous request right rounded simple single
+\ smallest spaces top underline vi xterm
 
 let &cpo = s:original_cpo
 unlet! s:original_cpo s:bg s:i
