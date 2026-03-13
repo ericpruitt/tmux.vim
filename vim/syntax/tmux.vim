@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.6a (git-00030aab)
+" Version: 3.6a (git-bef4865d)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -116,10 +116,10 @@ syn keyword tmuxOptions
 \ focus-follows-mouse get-clipboard history-file history-limit
 \ initial-repeat-time input-buffer-size key-table lock-after-time lock-command
 \ main-pane-height main-pane-width menu-border-lines menu-border-style
-\ menu-selected-style menu-style message-command-style message-limit
-\ message-line message-style mode-keys mode-style monitor-activity monitor-bell
-\ monitor-silence mouse other-pane-height other-pane-width
-\ pane-active-border-style pane-base-index pane-border-format
+\ menu-selected-style menu-style message-command-style message-format
+\ message-limit message-line message-style mode-keys mode-style
+\ monitor-activity monitor-bell monitor-silence mouse other-pane-height
+\ other-pane-width pane-active-border-style pane-base-index pane-border-format
 \ pane-border-indicators pane-border-lines pane-border-status pane-border-style
 \ pane-colors pane-colours pane-died pane-exited pane-focus-in pane-focus-out
 \ pane-mode-changed pane-scrollbars pane-scrollbars-position
