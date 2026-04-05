@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.6a (git-bef4865d)
+" Version: 3.6a (git-42dafcc6)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -173,8 +173,8 @@ syn keyword tmuxEnums
 \ 12-with-seconds 24-with-seconds absolute-centre all always any arrows bar
 \ blinking-bar blinking-block blinking-underline block both bottom buffer
 \ centre color colour csi-u current default double emacs external failed heavy
-\ keep-group keep-last largest latest left manual modal next no-detached none
-\ number off on other padded previous request right rounded simple single
+\ keep-group keep-last key largest latest left manual modal next no-detached
+\ none number off on other padded previous request right rounded simple single
 \ smallest spaces top underline vi xterm
 
 let &cpo = s:original_cpo
