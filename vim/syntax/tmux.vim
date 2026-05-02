@@ -1,5 +1,5 @@
 " Language: tmux(1) configuration file
-" Version: 3.6a (git-42dafcc6)
+" Version: 3.6a (git-9a94f486)
 " URL: https://github.com/ericpruitt/tmux.vim/
 " Maintainer: Eric Pruitt <eric.pruitt@gmail.com>
 " License: 2-Clause BSD (http://opensource.org/licenses/BSD-2-Clause)
@@ -105,15 +105,16 @@ syn keyword tmuxOptions
 \ client-focus-in client-focus-out client-light-theme client-resized
 \ client-session-changed clock-mode-color clock-mode-colour clock-mode-style
 \ codepoint-widths command-alias command-error copy-command
-\ copy-mode-current-match-style copy-mode-mark-style copy-mode-match-style
-\ copy-mode-position-format copy-mode-position-style copy-mode-selection-style
-\ cursor-color cursor-colour cursor-style default-client-command
-\ default-command default-shell default-size default-terminal
-\ destroy-unattached detach-on-destroy display-panes-active-color
-\ display-panes-active-colour display-panes-color display-panes-colour
-\ display-panes-time display-time editor escape-time exit-empty exit-unattached
-\ extended-keys extended-keys-format fill-character focus-events
-\ focus-follows-mouse get-clipboard history-file history-limit
+\ copy-mode-current-line-number-style copy-mode-current-match-style
+\ copy-mode-line-number-style copy-mode-line-numbers copy-mode-mark-style
+\ copy-mode-match-style copy-mode-position-format copy-mode-position-style
+\ copy-mode-selection-style cursor-color cursor-colour cursor-style
+\ default-client-command default-command default-shell default-size
+\ default-terminal destroy-unattached detach-on-destroy
+\ display-panes-active-color display-panes-active-colour display-panes-color
+\ display-panes-colour display-panes-time display-time editor escape-time
+\ exit-empty exit-unattached extended-keys extended-keys-format fill-character
+\ focus-events focus-follows-mouse get-clipboard history-file history-limit
 \ initial-repeat-time input-buffer-size key-table lock-after-time lock-command
 \ main-pane-height main-pane-width menu-border-lines menu-border-style
 \ menu-selected-style menu-style message-command-style message-format
@@ -170,12 +171,12 @@ syn keyword tmuxCommands
 \ switch-client switchc unbind unbind-key unlink-window unlinkw wait wait-for
 
 syn keyword tmuxEnums
-\ 12-with-seconds 24-with-seconds absolute-centre all always any arrows bar
-\ blinking-bar blinking-block blinking-underline block both bottom buffer
-\ centre color colour csi-u current default double emacs external failed heavy
-\ keep-group keep-last key largest latest left manual modal next no-detached
-\ none number off on other padded previous request right rounded simple single
-\ smallest spaces top underline vi xterm
+\ 12-with-seconds 24-with-seconds absolute absolute-centre all always any
+\ arrows bar blinking-bar blinking-block blinking-underline block both bottom
+\ buffer centre color colour csi-u current default double emacs external failed
+\ heavy hybrid keep-group keep-last key largest latest left manual modal next
+\ no-detached none number off on other padded previous relative request right
+\ rounded simple single smallest spaces top underline vi xterm
 
 let &cpo = s:original_cpo
 unlet! s:original_cpo s:bg s:i
